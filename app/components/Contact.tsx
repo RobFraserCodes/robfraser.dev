@@ -18,7 +18,7 @@ function Contact({}: Props) {
     let map;
     loader.load().then(() => {
       map = new google.maps.Map(document.getElementById('map') as HTMLElement, {
-        center: { lat: 57.7294395, lng: -0.9918013  },
+        center: { lat: 57.7294395, lng: -4.9918013  },
         zoom: 7,
         mapId: '6bde207161a39a05',
       });
@@ -29,7 +29,7 @@ function Contact({}: Props) {
     <div id="map-section">
       <div id="map"></div>
       <div id="section-content">
-        <section className='bg-slate-700/60 py-20' id="contact">
+        <section className='bg-slate-700/70 py-20' id="contact">
           <div className=''>
             <h1 className="h1">Want to talk?</h1>
             <p className="mt-6 max-w-xl text-center mx-auto mb-8">If you would like to talk about your next awesome project feel free to get in touch.</p>
@@ -57,7 +57,7 @@ function Contact({}: Props) {
                 </div>
 
                 <div className="w-full md:w-1/2 h-64 md:h-auto">
-                <ContactForm />
+                {/* <ContactForm /> */}
                 </div>
             </div>
           </div>

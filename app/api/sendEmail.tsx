@@ -21,12 +21,12 @@ const sendEmail = async (req: NextApiRequest, res: NextApiResponse) => {
     return;
   }
 
-  const { subject, message } = req.body;
+  const { subject, message, emailAddress } = req.body;
 
   try {
     const email = `
-        To: hi@robfraser.dev
         Subject: ${subject}
+        Email: ${emailAddress}
         ${message}
     `;
 
