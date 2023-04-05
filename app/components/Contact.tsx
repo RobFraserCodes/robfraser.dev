@@ -14,15 +14,14 @@ function Contact({}: Props) {
       apiKey: process.env.NEXT_PUBLIC_MAP_API_KEY || '',
       version: 'weekly',
     });
-    let map; 
-    loader.load().then(async () => {
-      const { Map } = await google.maps.importLibrary("maps") as google.maps.MapsLibrary;
-      map = new Map(document.getElementById("map") as HTMLElement, {
+    let map;
+    loader.load().then(() => {
+      map = new google.maps.Map(document.getElementById('map') as HTMLElement, {
         center: { lat: -34.397, lng: 150.644 },
         zoom: 8,
       });
     });
-  });
+  }, []);
 
   return (
     <section className='bg-slate-700 py-20' id="contact">
