@@ -17,8 +17,9 @@ function Contact({}: Props) {
     let map;
     loader.load().then(() => {
       map = new google.maps.Map(document.getElementById('map') as HTMLElement, {
-        center: { lat: -34.397, lng: 150.644 },
-        zoom: 8,
+        center: { lat: 57.7294395, lng: -4.9918013  },
+        zoom: 7,
+        mapId: '6bde207161a39a05',
       });
     });
   }, []);
