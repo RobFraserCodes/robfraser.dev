@@ -26,7 +26,7 @@ function NavBar({}: Props) {
     <nav className=' w-full z-20'>
         <div className='flex justify-between items-center max-w-5xl mx-auto px-20 lg:px-8 m-4 min-h-[60px]'>
             <div className=''>
-                <h1 onClick={() => scrollToSection("hero")} className='font-Graun text-2xl uppercase'>RobFraser.dev</h1>
+                <h1 onClick={() => scrollToSection("hero")} className='font-Graun text-2xl'>RobFraser</h1>
             </div>
             <div className='flex hidden md:flex '>
                 <button onClick={() => scrollToSection("about")} className='px-4 font-semibold uppercase'>About</button>

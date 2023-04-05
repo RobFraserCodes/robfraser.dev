@@ -12,7 +12,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className='flex flex-col bg-gradient-to-tr from-violet-700/50 to-fuchsia-700/95'>
+      <body className='flex flex-col bg-gradient-to-tr from-violet-700/50 to-fuchsia-700/95 min-h-screen'>
         {children}
       </body>
     </html>
