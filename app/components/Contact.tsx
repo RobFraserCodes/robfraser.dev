@@ -25,8 +25,8 @@ function Contact({}: Props) {
   });
 
   return (
-    <section id="contact">
-      <div >
+    <section className='bg-slate-700 py-20' id="contact">
+      <div className=''>
         <h1 className="h1">Contact Rob</h1>
         <p className="mt-6 max-w-xl text-center mx-auto mb-8">If you would like to talk about your next awesome project feel free to get in touch.</p>
       </div>
