@@ -11,7 +11,7 @@ function Contact({}: Props) {
   const googlemap = useRef(null);
   useEffect(() => {
     const loader = new Loader({
-      apiKey: env.NEXT_PUBLIC_MAP_API_KEY || '',
+      apiKey: process.env.NEXT_PUBLIC_MAP_API_KEY || '',
       version: 'weekly',
     });
     let map;
