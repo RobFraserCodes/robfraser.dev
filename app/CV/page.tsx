@@ -1,13 +1,14 @@
 'use client';
 import React from 'react';
 import SocialIcons from "../components/subComponents/socialIcons";
+import Head from './components/Head';
 
-export default function Home() {
+const ResumePage = () => {
     return (
       <>
+        <Head />
         <div id="cv-content" className="min-h-screen container mx-auto max-w-5xl py-8 px-8">
           <div className='flex justify-between'>
-            <h1 className="text-4xl font-bold mb-6">Rob Fraser</h1>
             <a href="/"><div>
               <p className='flex p-2 bg-white rounded-md shadow-md text-slate-800'>
               Back to Home</p>
@@ -79,4 +80,6 @@ export default function Home() {
       </>
   )
 }
+
+export default ResumePage;
   
