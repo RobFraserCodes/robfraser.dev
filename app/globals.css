@@ -2,13 +2,41 @@
 @tailwind components;
 @tailwind utilities;
 
-html {
-  @apply text-white;
+@layer base {
+  html {
+    @apply text-gray-50;
+  }
+
+  body {
+    @apply font-sans;
+  }
+
+  h1 {
+    @apply text-5xl font-extrabold uppercase text-center;
+  }
+
+  h2 {
+    @apply text-4xl font-extrabold uppercase text-center;
+  }
+
+  h3 {
+    @apply text-lg font-light mt-4 text-center pb-20;
+  }
+
+  p {
+    @apply font-thin;
+  }
+
+  a {
+    @apply text-blue-500;
+  }
+
+  ul {
+    @apply font-thin;
+  }
 }
 
-.h1 {
-  @apply text-5xl font-extrabold uppercase text-center;
-}
+{/* cv-heading style */}
 
 #map {
   min-height: 400px%;

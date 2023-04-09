@@ -7,10 +7,10 @@ type Props = {}
 
 function About({}: Props) {
   return (
-    <section id="about" className='min-h-screen flex justify-center max-w-5xl mx-auto mb-20 pt-20'>
+    <section id="about" className='min-h-screen flex justify-center mx-auto py-20'>
       <div className='container'>
-          <h1 className='h1'>UX Designer</h1>
-          <p className='mt-4 text-center pb-20'>Bridging design and development with creativity and technology.</p>
+          <h1 className='h2'>UX Designer & Developer</h1>
+          <h3>Bridging design and development with creativity and technology</h3>
         <div className='grid grid-cols-1 md:grid-cols-2 mx-8 gap-4'>
           <div>
               <Image className="h-96 w-full object-cover mb-10" src={meeting} alt="" />

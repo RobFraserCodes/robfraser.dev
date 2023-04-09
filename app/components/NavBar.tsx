@@ -30,6 +30,7 @@ function NavBar({}: Props) {
             </div>
             <div className='flex hidden md:flex '>
                 <button onClick={() => scrollToSection("about")} className='px-4 font-semibold uppercase'>About</button>
+                <button onClick={() => scrollToSection("skills")} className='px-4 font-semibold uppercase'>Skills</button>
                 <button onClick={() => scrollToSection("contact")} className='px-4 font-semibold uppercase'>Contact</button>
             </div>
             <motion.div             
@@ -53,6 +54,7 @@ function NavBar({}: Props) {
             }>
             <div className='pl-20 flex flex-col pb-8 items-start'>
                 <button onClick={() => scrollToSection("about")} className='py-2 font-semibold'>About</button>
+                <button onClick={() => scrollToSection("skills")} className='py-2 font-semibold'>Skills</button>
                 <button onClick={() => scrollToSection("contact")} className='py-2 font-semibold'>Contact</button>
                 <a href="/CV"><button className='p-2 rounded-md my-2 px-4 font-semibold bg-orange-400 shadow-md'>View My CV</button></a> 
             </div>
