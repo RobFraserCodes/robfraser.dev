@@ -1,11 +1,15 @@
-import React from 'react'
+import React from 'react';
 
-const CVLayout = ({children}) => {
+interface CVLayoutProps {
+  children: React.ReactNode;
+}
+
+const CVLayout: React.FC<CVLayoutProps> = ({ children }) => {
   return (
     <div className='bg-white text-slate-950'>
-        {children}
+      {children}
     </div>
-  )
+  );
 }
 
 export default CVLayout;
