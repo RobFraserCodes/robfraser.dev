@@ -28,7 +28,7 @@
   }
 
   a {
-    @apply text-blue-500;
+    @apply text-white hover:bg-orange-500;
   }
 
   ul {

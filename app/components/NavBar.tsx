@@ -56,7 +56,7 @@ function NavBar({}: Props) {
                 <button onClick={() => scrollToSection("about")} className='py-2 font-semibold'>About</button>
                 <button onClick={() => scrollToSection("skills")} className='py-2 font-semibold'>Skills</button>
                 <button onClick={() => scrollToSection("contact")} className='py-2 font-semibold'>Contact</button>
-                <a href="/CV"><button className='p-2 rounded-md my-2 px-4 font-semibold bg-orange-400 shadow-md'>View My CV</button></a> 
+                <a href="/CV"><button className='p-2 rounded-md my-2 px-4 font-semibold text-white'>View My CV</button></a> 
             </div>
         </div>
     </nav>

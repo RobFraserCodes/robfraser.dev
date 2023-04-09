@@ -17,21 +17,21 @@ const Hero: React.FC<Props> = () => {
         <div className="pb-20">
           <SocialIcons />
         </div>
-        <div className="relative w-full h-40">
+        <div className="relative w-80 h-80">
           <motion.div
             className="bg-slate-800/20 w-80 h-80 mx-auto absolute -x-10 rounded-full"
-            whileHover={{ scale: 1.2, rotate: 90 }}
+            whileHover={{ scale: 1.2 }}
             whileTap={{
               scale: 0.8,
-              rotate: -90,
               borderRadius: '100%',
             }}
-          ></motion.div>
-          <Image
-            src={shape}
-            alt="Picture of the author"
-            className="absolute w-112 h-112 overflow-hidden"
-          />
+          ><div className="absolute w-112 h-112 overflow-hidden rounded-full">
+            <Image
+              src={shape}
+              alt="Rob Fraser, UX Developer 3D portrait"
+            />
+          </div></motion.div>
+
         </div>
       </div>
     </section>
