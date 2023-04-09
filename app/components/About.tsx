@@ -13,7 +13,7 @@ function About({}: Props) {
           <h3>Bridging design and development with creativity and technology</h3>
         <div className='grid grid-cols-1 md:grid-cols-2 mx-8 gap-4'>
           <div>
-              <Image className="h-96 w-full object-cover mb-10" src={meeting} alt="" />
+              <Image className=" w-full object-cover mb-4" src={meeting} alt="" />
           </div>
           <div className='md:pl-8 mb-4'>
             <p className='mb-4'>Welcome to my website! I am a UX designer and front-end developer with a passion for creating beautiful, intuitive, and user-friendly interfaces. With over 10 years of experience in the field, I have honed my skills in design, coding, and user research to deliver exceptional digital experiences that delight users and meet business goals.</p>
@@ -23,8 +23,8 @@ function About({}: Props) {
             <p className='mb-4'>As a front-end developer, I specialise in creating responsive, accessible, and performant web applications using the latest technologies. I have expertise in HTML, CSS, JavaScript, React, and other front-end frameworks and libraries. I pay close attention to details and always strive to create pixel-perfect designs that look and feel great on any device.</p>
             <p className='mb-4'>Whether you need help designing a new product, optimising an existing one, or building a custom web application from scratch, I am here to help. Feel free to browse my portfolio and get in touch if you have any questions or would like to discuss a project. Let&apos;s work together to create something amazing!</p>
         </div>
-          <div>
-              <Image className="hidden md:flex h-96 w-96" src={shape} alt="" />
+          <div className='mx-auto'>
+              <Image className="w-full" src={shape} alt="" />
           </div>
         </div>
       </div>

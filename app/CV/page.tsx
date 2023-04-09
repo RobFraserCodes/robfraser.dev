@@ -8,7 +8,7 @@ const ResumePage = () => {
       <>
       <Head />
       <div className="min-h-screen container mx-auto max-w-5xl py-8 px-8">
-        <div className="flex justify-between mb-6">
+        <div className="flex mb-6">
           <a href="/">
             <div>
               <p className="flex p-2 bg-white rounded-md shadow-md text-slate-800">

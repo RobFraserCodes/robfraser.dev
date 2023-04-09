@@ -27,10 +27,6 @@
     @apply font-thin;
   }
 
-  a {
-    @apply text-white hover:bg-orange-500;
-  }
-
   ul {
     @apply font-thin;
   }

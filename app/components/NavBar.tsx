@@ -29,9 +29,11 @@ function NavBar({}: Props) {
                 <h1 onClick={() => scrollToSection("hero")} className='font-Graun text-2xl'>RobFraser</h1>
             </div>
             <div className='flex hidden md:flex '>
-                <button onClick={() => scrollToSection("about")} className='px-4 font-semibold uppercase'>About</button>
-                <button onClick={() => scrollToSection("skills")} className='px-4 font-semibold uppercase'>Skills</button>
-                <button onClick={() => scrollToSection("contact")} className='px-4 font-semibold uppercase'>Contact</button>
+                <button onClick={() => scrollToSection("about")} className='px-4 font-light uppercase hover:font-semibold'>About</button>
+                <button onClick={() => scrollToSection("skills")} className='px-4 font-light uppercase hover:font-semibold'>Skills</button>
+                <button onClick={() => scrollToSection("portfolio")} className='px-4 font-light uppercase hover:font-semibold'>Portfolio</button>
+                <button onClick={() => scrollToSection("blog")} className='px-4 font-light uppercase hover:font-semibold'>Blog</button>
+                <button onClick={() => scrollToSection("contact")} className='px-4 font-light uppercase hover:font-semibold'>Contact</button>
             </div>
             <motion.div             
                 whileTap={{ scale: 1.2, rotate: 45 }}
@@ -43,7 +45,7 @@ function NavBar({}: Props) {
                     <XMarkIcon className='h-6 w-6 md:hidden' onClick={handleNav} />
                 </button>
                 <a href="/CV">
-                    <button type="button" className='rounded-md hidden md:flex font-semibold p-2 bg-gradient-to-r from-orange-400 to-orange-500 shadow-lg px-6'>
+                    <button type="button" className='rounded-md hidden lg:flex font-semibold p-2 bg-gradient-to-r from-orange-400 to-orange-500 shadow-lg px-6'>
                     My CV
                     </button>
                 </a>   
@@ -55,8 +57,10 @@ function NavBar({}: Props) {
             <div className='pl-20 flex flex-col pb-8 items-start'>
                 <button onClick={() => scrollToSection("about")} className='py-2 font-semibold'>About</button>
                 <button onClick={() => scrollToSection("skills")} className='py-2 font-semibold'>Skills</button>
+                <button onClick={() => scrollToSection("portfolio")} className='py-2 font-semibold'>Portfolio</button>
+                <button onClick={() => scrollToSection("blog")} className='py-2 font-semibold'>Blog</button>
                 <button onClick={() => scrollToSection("contact")} className='py-2 font-semibold'>Contact</button>
-                <a href="/CV"><button className='p-2 rounded-md my-2 px-4 font-semibold text-white'>View My CV</button></a> 
+                <a href="/CV"><button className='p-2 rounded-md my-2 px-4 font-semibold text-white bg-orange-400'>View My CV</button></a> 
             </div>
         </div>
     </nav>
