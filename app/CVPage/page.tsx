@@ -6,7 +6,7 @@ import Head from './components/Head';
 import TopBar from './components/TopBar';
 
 
-const ResumePage = () => {
+const CVPage = () => {
   const downloadAsPDF = () => {
     const element = document.getElementById('resume-content');
     const options = {
@@ -100,5 +100,5 @@ const ResumePage = () => {
   )
 }
 
-export default ResumePage;
+export default CVPage;
   

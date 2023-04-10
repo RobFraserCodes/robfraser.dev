@@ -44,7 +44,7 @@ function NavBar({}: Props) {
                 <button className={menuOpen ? 'flex' : 'hidden'}>
                     <XMarkIcon className='h-6 w-6 md:hidden' onClick={handleNav} />
                 </button>
-                <a href="/CV">
+                <a href="/CVPage">
                     <button type="button" className='rounded-md hidden lg:flex font-semibold p-2 bg-gradient-to-r from-orange-400 to-orange-500 shadow-lg px-6'>
                     My CV
                     </button>
@@ -60,7 +60,7 @@ function NavBar({}: Props) {
                 <button onClick={() => scrollToSection("portfolio")} className='py-2 font-semibold'>Portfolio</button>
                 <button onClick={() => scrollToSection("blog")} className='py-2 font-semibold'>Blog</button>
                 <button onClick={() => scrollToSection("contact")} className='py-2 font-semibold'>Contact</button>
-                <a href="/CV"><button className='p-2 rounded-md my-2 px-4 font-semibold text-white bg-orange-400'>View My CV</button></a> 
+                <a href="/CVPage"><button className='p-2 rounded-md my-2 px-4 font-semibold text-white bg-orange-400'>View My CV</button></a> 
             </div>
         </div>
     </nav>
