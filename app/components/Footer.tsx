@@ -6,7 +6,7 @@ export default function Footer({}: Props) {
     const currentYear = new Date().getFullYear();
 
     return (
-      <footer className="bg-gradient-to-tr from-slate-700 to-slate-800 shadow-xl">
+      <footer className=" text-white bg-gradient-to-tr from-slate-700 to-slate-800 shadow-xl">
       <div className="container mx-auto px-6 py-12">
           <div className="md:-mx-3 md:flex md:items-center md:justify-between">
           <h1 className="text-3xl font-semibold tracking-tight md:mx-3 xl:text-4xl">Rob Fraser Dev.</h1>

@@ -1,40 +1,65 @@
-import React from 'react'
-import { motion } from 'framer-motion';
+import React, { useState } from 'react';
 import { SocialIcon } from 'react-social-icons';
+import styles from './socialIcons.module.css';
 
-type Props = {}
+type Props = {
+  fgColor?: string;
+};
 
-function SocialIcons({}: Props) {
+function SocialIcons({ fgColor = 'white' }: Props) {
+  const hoverColor = '#ff0000';
+  const [iconHover, setIconHover] = useState({
+    twitter: false,
+    github: false,
+    medium: false,
+    linkedin: false,
+  });
+
+  const handleMouseEnter = (platform) => {
+    setIconHover({ ...iconHover, [platform]: true });
+  };
+
+  const handleMouseLeave = (platform) => {
+    setIconHover({ ...iconHover, [platform]: false });
+  };
+
   return (
-    <div className=''>
-        <motion.div
-            initial={{ x: -500, opacity: 0, scale: 0.5 }}
-            animate={{ x: 0, opacity: 1, scale: 0.8 }}
-            transition={{ duration: 0.5 }}>
-            {/* Social Media Icons */}
-            <SocialIcon
-                url="https://twitter.com/robfrasercodes"
-                bgColor="transparent"
-                fgColor="#ffffff"
-            />
-            <SocialIcon 
-                url="https://github.com/RobFraserCodes"
-                fgColor="white"
-                bgColor="transparent" 
-            />
-            <SocialIcon 
-                url="https://medium.com/@rob.fraser.daviot"
-                fgColor="white"
-                bgColor="transparent" 
-            />
-            <SocialIcon
-                url="https://www.linkedin.com/in/rob-fraser-codes/"
-                bgColor="transparent"
-                fgColor="#ffffff"
-            />
-        </motion.div>
+    <div className="">
+      {/* Social Media Icons */}
+      <SocialIcon
+        className={styles.socialIcon}
+        url="https://twitter.com/robfrasercodes"
+        bgColor="transparent"
+        fgColor={iconHover.twitter ? hoverColor : fgColor}
+        onMouseEnter={() => handleMouseEnter('twitter')}
+        onMouseLeave={() => handleMouseLeave('twitter')}
+      />
+      <SocialIcon
+        className={styles.socialIcon}
+        url="https://github.com/RobFraserCodes"
+        fgColor={iconHover.github ? hoverColor : fgColor}
+        bgColor="transparent"
+        onMouseEnter={() => handleMouseEnter('github')}
+        onMouseLeave={() => handleMouseLeave('github')}
+      />
+      <SocialIcon
+        className={styles.socialIcon}
+        url="https://medium.com/@rob.fraser.daviot"
+        fgColor={iconHover.medium ? hoverColor : fgColor}
+        bgColor="transparent"
+        onMouseEnter={() => handleMouseEnter('medium')}
+        onMouseLeave={() => handleMouseLeave('medium')}
+      />
+      <SocialIcon
+        className={styles.socialIcon}
+        url="https://www.linkedin.com/in/rob-fraser-codes/"
+        bgColor="transparent"
+        fgColor={iconHover.linkedin ? hoverColor : fgColor}
+        onMouseEnter={() => handleMouseEnter('linkedin')}
+        onMouseLeave={() => handleMouseLeave('linkedin')}
+      />
     </div>
-  )
+  );
 }
 
 export default SocialIcons;
