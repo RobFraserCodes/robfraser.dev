@@ -1,13 +1,27 @@
 'use client';
-
 import React from 'react';
+import html2pdf from 'html2pdf.js';
 import SocialIcons from '../components/subComponents/socialIcons';
 import Head from './components/Head';
 import TopBar from './components/TopBar';
 
+
 const ResumePage = () => {
+  const downloadAsPDF = () => {
+    const element = document.getElementById('resume-content');
+    const options = {
+      margin: 1,
+      filename: 'resume.pdf',
+      image: { type: 'jpeg', quality: 0.98 },
+      html2canvas: { scale: 2 },
+      jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' },
+    };
+  
+    html2pdf().set(options).from(element).save();
+  };
+  
   return (
-    <>
+    <div id="resume-">
       <TopBar />
       <Head />
       <div className="min-h-screen w-full py-8 px-8 bg-slate-100">
@@ -70,6 +84,7 @@ const ResumePage = () => {
           <div className="mt-8 text-center">
             <button
               className="no-print bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+              onClick={downloadAsPDF}
             >
               Download as PDF
             </button>
@@ -81,7 +96,7 @@ const ResumePage = () => {
           </div>
           </div>
         </div>
-      </>
+      </div>
   )
 }
 
