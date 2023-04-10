@@ -2,7 +2,8 @@ import SocialIcons from '@/app/components/subComponents/socialIcons';
 
 const Head = () => {
   return (
-    <div className="flex w-full p-16  shadow-lg mx-auto">
+    <div className="flex w-full p-16 shadow-lg mx-auto">
+      <div className='flex justify-center w-full'>
       <div className="container grid grid-cols-5 gap-8">
         <div className="col-span-5 md:col-span-3">
           <p className="cv-headings">Rob Fraser</p>
@@ -16,6 +17,7 @@ const Head = () => {
             <SocialIcons fgColor="#333" />
           </div>
         </div>
+      </div>
       </div>
     </div>
   );

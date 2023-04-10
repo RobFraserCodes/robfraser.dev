@@ -1,23 +1,27 @@
 'use client';
+
 import React from 'react';
-import html2pdf from 'html2pdf.js';
+// import dynamic from 'next/dynamic'; // Remove this line
 import SocialIcons from '../components/subComponents/socialIcons';
 import Head from './components/Head';
 import TopBar from './components/TopBar';
+import html2canvas from 'html2canvas';
+import { jsPDF } from 'jspdf';
 
+// Remove these lines
+// const jsPDFDynamic = dynamic(() => import('jspdf'), { ssr: false });
+// const html2canvasDynamic = dynamic(() => import('html2canvas'), { ssr: false });
 
 const CVPage = () => {
-  const downloadAsPDF = () => {
+  const downloadAsPDF = async () => {
     const element = document.getElementById('resume-content');
-    const options = {
-      margin: 1,
-      filename: 'resume.pdf',
-      image: { type: 'jpeg', quality: 0.98 },
-      html2canvas: { scale: 2 },
-      jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' },
-    };
-  
-    html2pdf().set(options).from(element).save();
+
+    const canvas = await html2canvas(element, { scale: 2 });
+    const imgData = canvas.toDataURL('image/jpeg', 0.98);
+
+    const pdf = new jsPDF({ unit: 'in', format: 'letter', orientation: 'portrait' });
+    pdf.addImage(imgData, 'JPEG', 0, 0);
+    pdf.save('resume.pdf');
   };
   
   return (
