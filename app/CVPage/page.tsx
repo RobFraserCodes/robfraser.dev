@@ -5,8 +5,8 @@ import React from 'react';
 import SocialIcons from '../components/subComponents/socialIcons';
 import Head from './components/Head';
 import TopBar from './components/TopBar';
-import html2canvas from 'html2canvas';
-import { jsPDF } from 'jspdf';
+//import html2canvas from 'html2canvas';
+//import { jsPDF } from 'jspdf';
 
 // Remove these lines
 // const jsPDFDynamic = dynamic(() => import('jspdf'), { ssr: false });
@@ -86,12 +86,12 @@ const CVPage = () => {
             </div>
           </div>
           <div className="mt-8 text-center">
-            <button
+            {/* <button
               className="no-print bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
               onClick={downloadAsPDF}
             >
               Download as PDF
-            </button>
+  </button> */ }
             <a href="/"><button
               className="mx-8 no-print bg-orange-400 hover:bg-orange-500 text-white font-bold py-2 px-4 rounded"
             >
