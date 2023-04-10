@@ -13,7 +13,7 @@ import TopBar from './components/TopBar';
 // const html2canvasDynamic = dynamic(() => import('html2canvas'), { ssr: false });
 
 const CVPage = () => {
-  const downloadAsPDF = async () => {
+{ /* const downloadAsPDF = async () => {
     const element = document.getElementById('resume-content');
 
     const canvas = await html2canvas(element, { scale: 2 });
@@ -22,7 +22,7 @@ const CVPage = () => {
     const pdf = new jsPDF({ unit: 'in', format: 'letter', orientation: 'portrait' });
     pdf.addImage(imgData, 'JPEG', 0, 0);
     pdf.save('resume.pdf');
-  };
+  }; */}
   
   return (
     <div id="resume-">
