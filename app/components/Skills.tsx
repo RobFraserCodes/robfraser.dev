@@ -6,11 +6,11 @@ import dynamic from 'next/dynamic';
 const Icon3D = dynamic(() => import('./Icon3D'), { ssr: false });
 
 const skills = [
-  { name: 'Javascript', icon: '01.png' },
+  { name: 'Javascript, HTML & CSS', icon: '01.png' },
   { name: 'UX Development', icon: '02.png' },
   { name: 'React', icon: '03.png' },
   { name: 'App Development', icon: '04.png' },
-  { name: 'SEO', icon: '05.png' },
+  { name: 'WEB3', icon: '05.png' },
   { name: 'UI Design', icon: '06.png' },
 ];
 

@@ -32,7 +32,9 @@
   }
 }
 
-{/* cv-heading style */}
+.cv-headings {
+  @apply text-2xl font-bold uppercase pb-4;
+}
 
 #map {
   min-height: 400px%;
