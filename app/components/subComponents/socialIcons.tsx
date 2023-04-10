@@ -15,11 +15,11 @@ function SocialIcons({ fgColor = 'white' }: Props) {
     linkedin: false,
   });
 
-  const handleMouseEnter = (platform) => {
+  const handleMouseEnter = (platform: string) => {
     setIconHover({ ...iconHover, [platform]: true });
   };
 
-  const handleMouseLeave = (platform) => {
+  const handleMouseLeave = (platform: string) => {
     setIconHover({ ...iconHover, [platform]: false });
   };
 
