@@ -16,12 +16,10 @@ const skills = [
 
 const Skills: React.FC = () => {
   return (
-    <section id="skills" className="py-12 pb-20">
+    <section id="skills" className="py-12 pb-20 px-20">
       <div className="container mx-auto">
         <h2>My Skills</h2>
-        <h3 className="mb-4">
-          Bridging design and development with creativity and technology
-        </h3>
+        <h3 className="mb-4">Bridging design and development with creativity and technology</h3>
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
           {skills.map((skill, index) => (
             <div

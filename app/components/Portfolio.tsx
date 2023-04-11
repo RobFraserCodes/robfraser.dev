@@ -1,22 +1,22 @@
 const projects = [
     {
-      title: 'Project 1',
-      description: 'A brief description of Project 1.',
+      title: 'Artwork',
+      description: 'Using AI to generate ideas and concepts for new designs.',
       image: '/images/project1.png',
     },
     {
-      title: 'Project 2',
-      description: 'A brief description of Project 2.',
+      title: 'Highland Student Exchange',
+      description: 'A website that allows Highland students apply for a Japanese exchange program.',
       image: '/images/project2.png',
     },
     {
-      title: 'Project 3',
-      description: 'A brief description of Project 3.',
+      title: 'NFT Minter',
+      description: 'A web3 project that mints NFTs on the Solana blockchain.',
       image: '/images/project3.png',
     },
     {
-      title: 'Project 4',
-      description: 'A brief description of Project 4.',
+      title: 'UX Design',
+      description: 'A UX and UI design for a social media app.',
       image: '/images/project4.png',
     },
   ];

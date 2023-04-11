@@ -1,13 +1,12 @@
 import React, { useState } from 'react';
 import { SocialIcon } from 'react-social-icons';
-import styles from './socialIcons.module.css';
 
 type Props = {
   fgColor?: string;
 };
 
 function SocialIcons({ fgColor = 'white' }: Props) {
-  const hoverColor = '#ff0000';
+  const hoverColor = '#333';
   const [iconHover, setIconHover] = useState({
     twitter: false,
     github: false,
@@ -27,7 +26,7 @@ function SocialIcons({ fgColor = 'white' }: Props) {
     <div className="">
       {/* Social Media Icons */}
       <SocialIcon
-        className={styles.socialIcon}
+        className="mx-2"
         url="https://twitter.com/robfrasercodes"
         bgColor="transparent"
         fgColor={iconHover.twitter ? hoverColor : fgColor}
@@ -35,7 +34,7 @@ function SocialIcons({ fgColor = 'white' }: Props) {
         onMouseLeave={() => handleMouseLeave('twitter')}
       />
       <SocialIcon
-        className={styles.socialIcon}
+        className="mx-2"
         url="https://github.com/RobFraserCodes"
         fgColor={iconHover.github ? hoverColor : fgColor}
         bgColor="transparent"
@@ -43,7 +42,7 @@ function SocialIcons({ fgColor = 'white' }: Props) {
         onMouseLeave={() => handleMouseLeave('github')}
       />
       <SocialIcon
-        className={styles.socialIcon}
+        className="mx-2"
         url="https://medium.com/@rob.fraser.daviot"
         fgColor={iconHover.medium ? hoverColor : fgColor}
         bgColor="transparent"
@@ -51,7 +50,7 @@ function SocialIcons({ fgColor = 'white' }: Props) {
         onMouseLeave={() => handleMouseLeave('medium')}
       />
       <SocialIcon
-        className={styles.socialIcon}
+        className="mx-2"
         url="https://www.linkedin.com/in/rob-fraser-codes/"
         bgColor="transparent"
         fgColor={iconHover.linkedin ? hoverColor : fgColor}
