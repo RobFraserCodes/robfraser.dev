@@ -41,7 +41,7 @@ function Contact({}: Props) {
                   <div className="mt-6 mb-20 space-y-8 md:mt-8 flex flex-col">
                   <p className="flex">
                       <MapPinIcon className='w-6 h-6'/>
-                      <span className="mx-2">Based in the Highlands of Scotland, UK.</span>
+                      <span className="mx-2">Based in the Highlands of Scotland, UK.<br />Larch House, Daviot East, IV2 5XQ.</span>
                   </p>
 
                   <p className="flex">
