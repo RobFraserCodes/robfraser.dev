@@ -31,22 +31,22 @@ function CaesarCipher() {
   };
   
   const decrypt = () => {
-    const parsedShift = parseInt(shift);
-    const decrypted = encryptedMessage
+    const decrypted = message
       .split('')
       .map((char) => {
         const code = char.charCodeAt(0);
         if (code >= 65 && code <= 90) {
-          return String.fromCharCode(((code - 65 - parsedShift + 26) % 26) + 65);
+          return String.fromCharCode(((code - 65 - parseInt(shift, 10) + 26) % 26) + 65);
         }
         if (code >= 97 && code <= 122) {
-          return String.fromCharCode(((code - 97 - parsedShift + 26) % 26) + 97);
+          return String.fromCharCode(((code - 97 - parseInt(shift, 10) + 26) % 26) + 97);
         }
         return char;
       })
       .join('');
     setDecryptedMessage(decrypted);
   };
+  
   
   
   return (
