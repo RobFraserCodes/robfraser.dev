@@ -6,7 +6,7 @@ type Props = {
 };
 
 function SocialIcons({ fgColor = 'white' }: Props) {
-  const hoverColor = '#333';
+  const hoverColor = '#881177';
   const [iconHover, setIconHover] = useState({
     twitter: false,
     github: false,
