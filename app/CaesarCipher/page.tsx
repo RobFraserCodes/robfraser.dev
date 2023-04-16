@@ -52,6 +52,7 @@ function CaesarCipher() {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen">
       <h1 className="text-3xl font-bold mb-8">Caesar Cipher</h1>
+      <h3>A wee demo site to encrypt and decrypt messages.</h3>
       <div className="w-96 bg-white rounded-lg p-6 shadow-lg">
         <input
           type="text"
