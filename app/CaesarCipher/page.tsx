@@ -31,6 +31,7 @@ function CaesarCipher() {
   };
   
   const decrypt = () => {
+    const parsedShift = parseInt(shift);
     const decrypted = message
       .split('')
       .map((char) => {
