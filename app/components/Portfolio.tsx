@@ -24,7 +24,7 @@ const projects = [
   const Portfolio: React.FC = () => {
     return (
       <section id="portfolio" className="py-12 mb-20">
-        <div className="container mx-auto">
+        <div className="container mx-auto pt-20">
           <h2>My Portfolio</h2>
           <h3>A selection of my work for your approval</h3>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-8">

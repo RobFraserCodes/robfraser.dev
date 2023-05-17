@@ -20,11 +20,11 @@
   }
 
   h3 {
-    @apply text-lg font-light mt-4 text-center pb-20;
+    @apply text-xl font-light mt-4 text-center pb-20;
   }
 
   p {
-    @apply font-thin;
+    @apply font-thin text-xl;
   }
 
   ul {
@@ -63,4 +63,18 @@
   position: relative;
   z-index: 2;
   /* Add any other desired styles for the content */
+}
+
+.sticky-nav {
+  animation: sticky-nav 300ms;
+}
+ 
+@keyframes sticky-nav {
+ 0% {
+     transform: translateY(-6em)
+ }
+
+ 100% {
+     transform: translateY(0)
+ }
 }
