@@ -34,7 +34,7 @@ const ContactForm: React.FC = () => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <div className="mx-auto w-full overflow-hidden rounded-xl px-8 py-10 shadow-2xl lg:max-w-xl bg-slate-700/80">
+      <div className="mx-auto w-full overflow-hidden rounded-xl px-8 py-10 shadow-2xl lg:max-w-xl bg-primary">
         <h1 className=""></h1>
         <div className="flex-1">
           <label className="mb-2 block text-sm text-gray-300">Subject</label>
@@ -53,7 +53,7 @@ const ContactForm: React.FC = () => {
 
         <button
           type="submit"
-          className="mt-6 w-full transform rounded-md bg-orange-300 px-6 py-3 text-sm font-medium capitalize tracking-wide text-white transition-colors duration-300 hover:bg-orange-400 focus:outline-none focus:ring focus:ring-blue-400 focus:ring-opacity-50"
+          className="mt-6 w-full transform rounded-md bg-secondary px-6 py-3 text-sm font-medium capitalize tracking-wide text-white transition-colors duration-300 hover:bg-secondary-dark focus:outline-none focus:ring focus:ring-primary focus:ring-opacity-50"
         >
           Get in touch
         </button>

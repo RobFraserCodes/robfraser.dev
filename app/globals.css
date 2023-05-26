@@ -3,10 +3,6 @@
 @tailwind utilities;
 
 @layer base {
-  html {
-    @apply text-gray-50;
-  }
-
   body {
     @apply font-sans;
   }
@@ -20,7 +16,7 @@
   }
 
   h3 {
-    @apply text-xl font-light mt-4 text-center pb-20;
+    @apply text-xl text-center pb-24;
   }
 
   p {

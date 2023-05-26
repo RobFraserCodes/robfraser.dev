@@ -5,8 +5,8 @@ type Props = {
   fgColor?: string;
 };
 
-function SocialIcons({ fgColor = '#D2AFE3' }: Props) {
-  const hoverColor = '#6B21A8';
+function SocialIcons({ fgColor = '#219EBC' }: Props) {
+  const hoverColor = '#1F91AD';
   const [iconHover, setIconHover] = useState({
     twitter: false,
     github: false,
@@ -23,7 +23,7 @@ function SocialIcons({ fgColor = '#D2AFE3' }: Props) {
   };
 
   return (
-    <div className="">
+    <div className="pt-4">
       {/* Social Media Icons */}
       <SocialIcon
         className="mx-2"
