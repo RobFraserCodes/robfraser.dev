@@ -13,7 +13,7 @@ const Hero: React.FC<Props> = () => {
     <div className='bg-white relative'>
       <section id="hero" className="container flex justify-center mx-auto pb-40">
         <div className="flex flex-col items-center -top-24">
-          <h1 className="mt-36 text-purple-800">Rob Fraser</h1>
+          <h1 className="mt-36 text-purple-800">rob fraser</h1>
           <h3 className='text-purple-800'>UX Designer and Frontend Developer</h3>
           <div className="relative w-80 h-80">
             <motion.div

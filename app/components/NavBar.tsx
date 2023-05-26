@@ -85,12 +85,12 @@ function NavBar({}: Props) {
                           <ul className="flex flex-col-reverse space-x-0 lg:space-x-6 lg:flex-row">
                               <li className="mt-4 lg:mt-0">
                                   <a href="/CVPage" className="py-3 px-4 text-center border text-gray-600 hover:text-purple-600 hover:bg-secondary rounded-md block lg:inline lg:border-0 font-medium mb-20 uppercase">
-                                      Rob's CV
+                                      View My CV
                                   </a>
                               </li>
                               <li className="mt-8 lg:mt-0">
-                                  <a href="/Enquiry" className="py-3 px-4 text-center text-white font-normal bg-purple-600 hover:bg-purple-700 rounded-md shadow block lg:inline">
-                                      Hire Me
+                                  <a href="/Enquiry" className="py-3 px-4 text-center text-white font-normal bg-purple-600 hover:bg-purple-700 rounded-md shadow block lg:inline uppercase">
+                                      Get Quote
                                   </a>
                               </li>
                           </ul>

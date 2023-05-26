@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { Dialog } from '@headlessui/react';
 
 function HeroSection() {
   let [isOpen, setIsOpen] = useState(true);
@@ -32,8 +31,8 @@ function HeroSection() {
         >
             Get a quote
         </a>
-        <a href="/" className="block py-2 px-4 text-gray-700 hover:text-gray-500 font-medium duration-150 active:bg-gray-100 border rounded-lg">
-            Find out more
+        <a href="/login" className="block py-2 px-4 text-gray-700 hover:text-gray-500 font-medium duration-150 active:bg-gray-100 border rounded-lg">
+            Retrieve a saved quote
         </a>
         </div>
         </div>
@@ -42,27 +41,6 @@ function HeroSection() {
         </div>
     </div>
 
-      {/* Add Dialog component */}
-      <Dialog open={isOpen} onClose={closeDialog} className="fixed z-10 inset-0 overflow-y-auto">
-        <div className="flex items-center justify-center min-h-screen">
-          <Dialog.Overlay className="" />
-          <div className="p-6 mx-4 my-8 max-w-md w-full rounded-lg">
-            <Dialog.Title className="text-lg font-medium leading-6 text-gray-900">Get a quote</Dialog.Title>
-            <div className="mt-2 rounded-md shadow-sm p-4">
-
-            </div>
-            <div className="mt-4">
-              <button
-                type="button"
-                className="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-                onClick={closeDialog}
-              >
-                Close
-              </button>
-            </div>
-          </div>
-        </div>
-      </Dialog>
     </section>
   );
 }

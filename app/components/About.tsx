@@ -7,7 +7,7 @@ type Props = {}
 
 function About({}: Props) {
   return (
-    <section id="about" className='min-h-screen flex justify-center mx-auto py-40'>
+    <section id="about" className='min-h-screen flex justify-center mx-auto py-40 bg-[#74247A]'>
       <div className='container lg:px-20'>
           <h1 className='h2'>UX Designer & Developer</h1>
           <h3>Bridging design and development with creativity and technology</h3>
