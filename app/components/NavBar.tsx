@@ -18,7 +18,7 @@ export default () => {
     ];
 
     return (
-        <nav className="bg-white dark:bg-dark  border-b w-full md:static md:text-sm md:border-none">
+        <nav className="bg-off-white dark:bg-dark  border-b w-full md:static md:text-sm md:border-none">
             <div className="items-center px-4 max-w-screen-xl mx-auto md:flex md:px-8">
                 <div className="flex items-center justify-between py-3 md:py-5 md:block">
                     <a href="/">
@@ -64,7 +64,7 @@ export default () => {
                             </li>
                             <li>
                                 <a href="/Enquiry" className="hidden py-3 px-4 font-medium text-center text-white bg-primary hover:bg-primary-dark active:bg-primary-dark active:shadow-none rounded-lg shadow lg:inline uppercase">
-                                    Get a Quote
+                                    Build My App
                                 </a>
                             </li>
                         </div>

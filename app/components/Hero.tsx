@@ -11,7 +11,7 @@ type Props = {};
 
 const Hero: React.FC<Props> = () => {
   return (
-    <div className='relative dark:bg-dark'>
+    <div className='relative bg-off-white dark:bg-dark'>
       <section id="hero" className="container flex justify-center mx-auto pb-40">
         <div className="flex flex-col items-center -top-24 text-black">
           <h1 className="mt-32 dark:text-white">rob fraser</h1>

@@ -21,7 +21,7 @@ const Skills: React.FC = () => {
       <Skew colour='bg-secondary-dark' area='top' />
       <div className="container mx-auto my-20 text-white">
         <h2 className='text-purple-700'>My Skills</h2>
-        <h3 className="mb-4 text-purple-700 font-thin">Bridging design and development with creativity and technology</h3>
+        <h3 className="mb-20 font-thin">Bridging design and development with creativity and technology</h3>
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
           {skills.map((skill, index) => (
             <div

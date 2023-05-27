@@ -10,7 +10,8 @@ module.exports = {
   theme: {
     colors: {
       'light':  '#EDF9FC',
-      'white': '#EFEFEF',
+      'off-white': '#FAFAFA',
+      'white': '#FFFFFF',
       'dark':  '#1A1F16',
       'black': '#333333',
       'primary': {

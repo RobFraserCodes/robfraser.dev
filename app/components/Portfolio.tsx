@@ -23,10 +23,10 @@ const projects = [
   
   const Portfolio: React.FC = () => {
     return (
-      <section id="portfolio" className="py-12 pb-20 bg-white dark:bg-black dark:text-white">
+      <section id="portfolio" className="py-12 pb-20 bg-off-white dark:bg-black dark:text-white">
         <div className="container mx-auto pt-20">
           <h2>My Portfolio</h2>
-          <h3 className="font-thin">A selection of my work for your approval</h3>
+          <h3 className="mb-20 font-thin">A selection of my work for your approval</h3>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-8">
             {projects.map((project, index) => (
               <div
