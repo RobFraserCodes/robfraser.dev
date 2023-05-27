@@ -10,7 +10,7 @@ function About({}: Props) {
     <section id="about" className='min-h-screen flex justify-center mx-auto py-40 bg-primary text-white'>
       <div className='container lg:px-20'>
           <h1 className=''>UX Designer & Developer</h1>
-          <h3>Bridging design and development with creativity and technology</h3>
+          <h3 className='font-thin'>Bridging design and development with creativity and technology</h3>
         <div className='grid grid-cols-1 md:grid-cols-2 mx-8 gap-4'>
           <div>
               <Image className=" w-full object-cover mb-4 w-114 h-114 lg:w-[400px]" src={meeting} alt="" />

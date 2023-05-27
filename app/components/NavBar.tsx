@@ -18,7 +18,7 @@ export default () => {
     ];
 
     return (
-        <nav className="bg-white border-b w-full md:static md:text-sm md:border-none">
+        <nav className="bg-white dark:bg-dark  border-b w-full md:static md:text-sm md:border-none">
             <div className="items-center px-4 max-w-screen-xl mx-auto md:flex md:px-8">
                 <div className="flex items-center justify-between py-3 md:py-5 md:block">
                     <a href="/">
@@ -34,9 +34,9 @@ export default () => {
                         >
                             {
                                 state ? (
-                                    <XMarkIcon className="w-6 h-6" />
+                                    <XMarkIcon className="w-6 h-6 dark:stroke-white" />
                                 ) : (
-                                    <Bars3Icon className="w-6 h-6" />
+                                    <Bars3Icon className="w-6 h-6 dark:stroke-white" />
                                 )
                             }
                         </button>
@@ -47,7 +47,7 @@ export default () => {
                         {
                             navigation.map((item, idx) => {
                                 return (
-                                    <li key={idx} className="text-black hover:text-primary text-lg">
+                                    <li key={idx} className="text-black dark:text-white hover:text-primary text-lg">
                                         <a href={item.path} className="block">
                                             {item.title}
                                         </a>
@@ -55,15 +55,15 @@ export default () => {
                                 )
                             })
                         }
-                        <span className='hidden w-px h-6 bg-black/30 md:block'></span>
+                        <span className='hidden w-px h-6 bg-black/30 dark:bg-white/30 lg:block'></span>
                         <div className='space-y-3 items-center gap-x-6 md:flex md:space-y-0'>
                             <li>
-                                <a href="/CVPage" className="hidden lg:block py-3 text-center text-black hover:text-primary border rounded-lg md:border-none text-lg">
+                                <a href="/CVPage" className="hidden lg:block py-3 text-center text-black dark:text-white hover:text-primary border rounded-lg md:border-none text-lg">
                                     My CV
                                 </a>
                             </li>
                             <li>
-                                <a href="/Enquiry" className="block py-3 px-4 font-medium text-center text-white bg-primary hover:bg-primary-dark active:bg-primary-dark active:shadow-none rounded-lg shadow md:inline uppercase">
+                                <a href="/Enquiry" className="hidden py-3 px-4 font-medium text-center text-white bg-primary hover:bg-primary-dark active:bg-primary-dark active:shadow-none rounded-lg shadow lg:inline uppercase">
                                     Get a Quote
                                 </a>
                             </li>

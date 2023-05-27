@@ -32,7 +32,7 @@ function Contact({}: Props) {
         <section className='bg-dark/80 text-white py-20' id="contact">
           <div className=''>
             <h1 className="h1">Let's Connect</h1>
-            <h3 className="mt-6 max-w-xl text-center mx-auto">If you would like to talk about your next awesome project feel free to get in touch.</h3>
+            <h3 className="mt-6 max-w-xl text-center mx-auto font-thin">If you would like to talk about your next awesome project feel free to get in touch.</h3>
           </div>
           <div className=''>
             <div className="container mx-auto max-w-5xl p-8">
