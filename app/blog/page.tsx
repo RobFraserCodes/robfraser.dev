@@ -3,13 +3,13 @@
 import useSWR from 'swr';
 import PocketBase from 'pocketbase';
 
-const pb = new PocketBase('http://127.0.0.1:8090');
+const pb = new PocketBase(`${process.env.NEXT_PUBLIC_API_BASE_URL}`);
 const fetcher = (url: string) => pb.collection(url).getFullList({ sort: '-created' });
 
 function BlogPage() {
     const { data: posts, error } = useSWR('posts', fetcher);
 
-    if (error) return <div>Failed to load</div>
+    if (error) return <div className='min-h-screen bg-off-white pt-20 px-8 text-center text-dark text-3xl font-extrabold sm:text-4xl'>Failed to load</div>
     if (!posts) return <div>Loading...</div>
 
     return (
