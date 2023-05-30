@@ -1,4 +1,7 @@
 import React, { FormEvent } from 'react';
+import PocketBase from 'pocketbase';
+
+const pb = new PocketBase('http://127.0.0.1:8090');
 
 const ContactForm: React.FC = () => {
   const handleSubmit = async (event: FormEvent) => {
@@ -7,19 +10,13 @@ const ContactForm: React.FC = () => {
     const message = (event.target as any)['message'].value;
     const email = (event.target as any)['email'].value;
 
-    // Call the API route to send the email
-    const JSONdata = JSON.stringify({ subject, message, email });
-    const endpoint = '/api/contact';
-    const options = {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSONdata,
-    };
+    const data = {
+      "subject": subject,
+      "message": message,
+      "email": email
+    }
 
-    const response = await fetch(endpoint, options);
-    alert(response.status);
+    const record = await pb.collection('homepage_enquiries').create(data);
   };
 
   return (
