@@ -1,36 +1,28 @@
-import Link from 'next/link';
+import PocketBase from 'pocketbase';
 
-export async function serverComponent() {
-    const res = await fetch('http://127.0.0.1:8090/api/collections/posts/records?page=1&perpage=5');
-    const posts = await res.json();
+const pb = new PocketBase('http://127.0.0.1:8090');
 
-    return (
-        <BlogPage posts={posts} />
-    );
-}
+async function BlogPage() {
+    const posts = await pb.collection('posts').getFullList({
+        sort: '-created',
+    });
 
-function BlogPage({ posts }) {
     return (
         <section id="blog" className="min-h-screen">
             <h1>Posts</h1>
             <div>
-                {posts?.map((post) => {
-                    return <Post key={post.id} post={post} />;
-                })} 
+                {posts.map((post) => {
+                    return <Post key={post.id} title={post.title} />
+                })}
             </div>
         </section>
     )
 }
 
-function Post({post}) {
-    const { id, title, blog} = post || {};
-
+function Post({title}) {
     return (
-        <Link href={`/blog/${id}`} >
-            <div>
-                <h2>{title}</h2>
-                <p>{blog}</p>
-            </div>
-        </Link>
+        <h1>{title}</h1>
     )
 }
+
+export default BlogPage;
