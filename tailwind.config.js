@@ -12,17 +12,17 @@ module.exports = {
       'light':  '#EDF9FC',
       'off-white': '#FAFAFA',
       'white': '#FFFFFF',
-      'dark':  '#1A1F16',
-      'black': '#333333',
+      'dark':  '#1B1F3B',
+      'black': '#13162A',
       'primary': {
         light: '#2BB7DA',
         DEFAULT: '#219EBC',
         dark: '#1F91AD',
       },
       'secondary': {
-        light: '#FF8E0D',
-        DEFAULT: '#FB8500',
-        dark: '#E87C00',
+        light: '#B758EE',
+        DEFAULT: '#B14AED',
+        dark: '#A733EB',
       },
       'accent': {
         DEFAULT: '#8ECAE6',

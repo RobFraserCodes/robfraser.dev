@@ -28,7 +28,7 @@ const CVPage = () => {
     <div id="resume-">
       <TopBar />
       <Head />
-      <div className="min-h-screen w-full py-8 px-8 bg-off-white">
+      <div className="bg-off-white w-full py-8 px-8 bg-">
         <div className="container mx-auto">
           <div className="bg-white rounded-md shadow-sm p-8 mb-6">
             <p className="cv-headings">Web Developer & UX Designer</p>

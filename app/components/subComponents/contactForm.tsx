@@ -3,33 +3,23 @@ import React, { FormEvent } from 'react';
 const ContactForm: React.FC = () => {
   const handleSubmit = async (event: FormEvent) => {
     event.preventDefault();
-    console.log('Form submitted');
     const subject = (event.target as any)['subject'].value;
     const message = (event.target as any)['message'].value;
     const email = (event.target as any)['email'].value;
 
     // Call the API route to send the email
-    const sendEmail = async (subject: string, message: string, email: string) => {
-      try {
-        const response = await fetch('/api/contact', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({ subject, message, email }),
-        });
-
-        if (response.ok) {
-          alert('Email sent successfully!');
-        } else {
-          alert('Failed to send email.');
-        }
-      } catch (error) {
-        console.error('Error sending email:', error);
-      }
+    const JSONdata = JSON.stringify({ subject, message, email });
+    const endpoint = '/api/contact';
+    const options = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSONdata,
     };
-    
-    await sendEmail(subject, message, email);
+
+    const response = await fetch(endpoint, options);
+    alert(response.status);
   };
 
   return (
