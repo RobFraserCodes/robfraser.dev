@@ -23,7 +23,7 @@ const projects = [
   
   const Portfolio: React.FC = () => {
     return (
-      <section id="portfolio" className="py-12 pb-20 bg-off-white dark:bg-black dark:text-white">
+      <section id="portfolio" className="py-12 pb-20 bg-off-white dark:bg-dark dark:text-white">
         <div className="container mx-auto pt-20">
           <h2>My Portfolio</h2>
           <h3 className="mb-20 font-thin">A selection of my work for your approval</h3>
@@ -31,7 +31,7 @@ const projects = [
             {projects.map((project, index) => (
               <div
                 key={index}
-                className="flex flex-col items-center text-center space-y- p-4 bg-primary dark:bg-dark rounded-lg shadow-md text-white"
+                className="flex flex-col items-center text-center space-y- p-4 bg-primary dark:bg-black rounded-lg shadow-md text-white"
               >
                 <img
                   src={project.image}
