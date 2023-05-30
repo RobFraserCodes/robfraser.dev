@@ -1,3 +1,4 @@
+import Footer from './components/Footer'
 import './globals.css'
 
 export const metadata = {
@@ -14,6 +15,7 @@ export default function RootLayout({
     <html lang="en">
       <body className='flex flex-col text-black'>
         {children}
+        <Footer />
       </body>
     </html>
   )

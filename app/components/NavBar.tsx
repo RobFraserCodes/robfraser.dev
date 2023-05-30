@@ -13,7 +13,7 @@ export default () => {
         { title: "About", path: "#about" },
         { title: "Skills", path: "#skills" },
         { title: "Portfolio", path: "#portfolio" },
-        { title: "Blog", path: "#blog" },
+        { title: "Blog", path: "/blog" },
         { title: "Contact", path: "#contact" }
     ];
 
