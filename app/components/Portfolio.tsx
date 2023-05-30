@@ -4,7 +4,7 @@ import useSWR from 'swr';
 import PocketBase from 'pocketbase';
 
 const pb = new PocketBase('http://127.0.0.1:8090');
-const fetcher = url => pb.collection(url).getFullList({ sort: '-created' });
+const fetcher = (url: string) => pb.collection(url).getFullList({ sort: '-created' });
   
   const Portfolio: React.FC = () => {
     const { data: portfolio, error } = useSWR('portfolio', fetcher);
