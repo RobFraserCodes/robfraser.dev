@@ -1,10 +1,6 @@
 'use client';
 
 import useSWR from 'swr';
-import PocketBase from 'pocketbase';
-
-const pb = new PocketBase(`${process.env.NEXT_PUBLIC_API_BASE_URL}`);
-const fetcher = (url: string) => pb.collection(url).getFullList({ sort: '-created' });
 
 function BlogPage() {
     const { data: posts, error } = useSWR('posts', fetcher);
