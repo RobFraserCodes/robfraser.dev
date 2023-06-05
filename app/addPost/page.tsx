@@ -63,7 +63,7 @@ export default function AddPost() {
     // Add each tag to the tags table and link it to the new post
     const tagArray = tags.split(','); // Split tags by comma
     for (const tagName of tagArray) {
-      let tag: { id: number; tag_name: string } | null = null;
+      let tag: { id: number } | null = null;
       
       // Check if tag already exists
       const { data: existingTags, error: getTagError } = await supabase
