@@ -9,13 +9,12 @@ export default function AddPost() {
   const [blurb, setBlurb] = useState<string | null>('');
   const [slug, setSlug] = useState<string | null>('');
   const [content, setContent] = useState<string | null>('');
-  const [tags, setTags] = useState<string | null>('');
   const [image, setImage] = useState<File | null>(null);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    if (!title || !author || !content || !tags || !image) {
+    if (!title || !author || !content || !blurb || !slug  || !image) {
       console.error('All fields are required');
       return;
     }
@@ -49,6 +48,8 @@ export default function AddPost() {
         title,
         author,
         content,
+        blurb,
+        slug,
         image_url: publicURL,  // Save the image URL in the database
       },
     ]);
@@ -59,54 +60,13 @@ export default function AddPost() {
       console.error('No data received after inserting post');
       return;
     }
-    
-    // Add each tag to the tags table and link it to the new post
-    const tagArray = tags.split(','); // Split tags by comma
-    for (const tagName of tagArray) {
-      let tag: { id: number } | null = null;
-      
-      // Check if tag already exists
-      const { data: existingTags, error: getTagError } = await supabase
-        .from('tags')
-        .select('id')
-        .eq('tag_name', tagName.trim());
-      
-      if (getTagError) console.error('Error getting tag: ', getTagError);
-      
-      if (existingTags && existingTags.length > 0) {
-        // If tag exists, use the existing tag
-        tag = existingTags[0];
-      } else {
-        // If tag doesn't exist, create a new one
-        const { data: newTag, error: insertTagError } = await supabase
-          .from('tags')
-          .insert([
-            { tag_name: tagName.trim() },
-          ]) as { data: { id: number, tag_name: string }[] | null, error: Error | null };
-          
-        if (insertTagError) console.error('Error inserting tag: ', insertTagError);
-        if (newTag && newTag.length > 0) {
-          tag = newTag[0];
-        }
-      }
-
-      // Link the tag to the new post
-      if (tag) {
-        const { data: postTag, error: postTagError } = await supabase
-          .from('post_tags')
-          .insert([
-            { post_id: data[0].id, tag_id: tag.id },
-          ]);
-          
-        if (postTagError) console.error('Error inserting post-tag: ', postTagError);
-      }
-    }
 
     // Reset form
     setTitle('');
     setAuthor('');
     setContent('');
-    setTags('');
+    setBlurb('');
+    setSlug('');
     setImage(null);
   };
 
@@ -150,12 +110,6 @@ export default function AddPost() {
             <input 
             className='p-2 rounded-md mb-4 w-full'
             type="file" onChange={e => setImage(e.target.files ? e.target.files[0] : null)} required />
-        </div>
-        <div className='flex flex-col mb-4 w-full'>
-            <label className='justify-start text-gray mb-2'>Tags</label>
-            <input 
-            className='p-2 rounded-md mb-4 w-full'
-            type="text" value={tags} onChange={e => setTags(e.target.value)} placeholder="Tags (comma-separated)" required />
         </div>
         <button type="submit" className='bg-primary hover:bg-primary-dark text-white p-2 rounded-md'>Add Post</button>
         </form>
