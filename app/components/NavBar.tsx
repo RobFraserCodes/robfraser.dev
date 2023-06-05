@@ -4,8 +4,11 @@ import { useState } from 'react';
 import Image from 'next/image';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 import logo from '/public/logo.svg';
+import { usePathname } from 'next/navigation';
 
-export default () => {
+export default function Navbar() {
+  const pathname = usePathname();
+  const isOnHomePage = pathname === "/";
 
     const [state, setState] = useState(false)
 
@@ -48,7 +51,7 @@ export default () => {
                             navigation.map((item, idx) => {
                                 return (
                                     <li key={idx} className="text-black dark:text-white hover:text-primary text-lg">
-                                        <a href={item.path} className="block">
+                                        <a href={isOnHomePage ? item.path : `/${item.path}`}>
                                             {item.title}
                                         </a>
                                     </li>
