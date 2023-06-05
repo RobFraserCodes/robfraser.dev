@@ -94,6 +94,55 @@ export default function AddPost() {
   };
 
   return (
-    // The rest of your JSX code here
+    <div className='bg-off-white '>
+    <div className='flex items-center justify-center px-20 max-w-5xl mx-auto'>
+        <form onSubmit={handleSubmit} className='my-8 flex flex-col items-center justify-center w-full'>
+        <h2 className='mb-4'>Add Post</h2>
+        <div className='flex flex-col mb-4 w-full'>
+            <label className='justify-start text-gray mb-2'>Post Title</label>
+            <input 
+            className='p-2 rounded-md mb-4 w-full'
+            type="text" value={title} onChange={e => setTitle(e.target.value)} placeholder="Title" required />
+        </div>
+        <div className='flex flex-col mb-4 w-full'>
+            <label className='justify-start text-gray mb-2'>Author</label>
+            <input 
+            className='p-2 rounded-md mb-4 w-full'
+            type="text" value={author} onChange={e => setAuthor(e.target.value)} placeholder="Author" required />
+        </div>
+        <div className='flex flex-col mb-4 w-full'>
+            <label className='justify-start text-gray mb-2'>Blurb</label>
+            <input 
+            className='p-2 rounded-md mb-4 w-full'
+            type="text" value={blurb} onChange={e => setBlurb(e.target.value)} placeholder="Blurb" required />
+        </div>
+        <div className='flex flex-col mb-4 w-full'>
+            <label className='justify-start text-gray mb-2'>Slug</label>
+            <input 
+            className='p-2 rounded-md mb-4 w-full'
+            type="text" value={slug} onChange={e => setSlug(e.target.value)} placeholder="Slug" required />
+        </div>
+        <div className='flex flex-col mb-4 w-full'>
+            <label className='justify-start text-gray mb-2'>Content</label>
+            <textarea 
+            className='p-2 rounded-md mb-4 w-full'
+            rows={10} value={content} onChange={e => setContent(e.target.value)} placeholder="Content" required />
+        </div>
+        <div className='flex flex-col mb-4 w-full'>
+            <label className='justify-start text-gray mb-2'>Image</label>
+            <input 
+            className='p-2 rounded-md mb-4 w-full'
+            type="file" onChange={e => setImage(e.target.files ? e.target.files[0] : null)} required />
+        </div>
+        <div className='flex flex-col mb-4 w-full'>
+            <label className='justify-start text-gray mb-2'>Tags</label>
+            <input 
+            className='p-2 rounded-md mb-4 w-full'
+            type="text" value={tags} onChange={e => setTags(e.target.value)} placeholder="Tags (comma-separated)" required />
+        </div>
+        <button type="submit" className='bg-primary hover:bg-primary-dark text-white p-2 rounded-md'>Add Post</button>
+        </form>
+    </div>
+    </div>
   );
 }
