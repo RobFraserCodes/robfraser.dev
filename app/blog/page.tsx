@@ -1,6 +1,17 @@
 'use client';
 
+import { supabase } from '@/utils/supabaseClient';
 import useSWR from 'swr';
+
+async function fetcher() {
+  let { data, error } = await supabase
+    .from('blog_posts')
+    .select('*');
+    
+  if (error) throw error;
+
+  return data;
+}
 
 function BlogPage() {
     const { data: posts, error } = useSWR('posts', fetcher);
@@ -30,16 +41,16 @@ function BlogPage() {
                     </form>
                 </div>
             <div className='grid gap-x-8 gap-y-10 mt-16 sm:grid-cols-2 lg:grid-cols-3 pb-20'>
-                {posts.map((items, key) => (
+                {posts.map((post, key) => (
                         <div className="w-full mx-auto group sm:max-w-sm bg-white p-8 shadow-md rounded-md" key={key}>
-                            <a href={items.slug}>
-                                <img src={`http://127.0.0.1:8090/api/files/${items.collectionId}/bwlx6qlu0xgpiim/07DX9lh6xiQr_UVxl1wReii.png?token=`} loading="lazy" alt={items.title} className="w-full rounded-lg" />
+                            <a href={post.slug}>
+                                <img src={post.image_url} loading="lazy" alt={post.title} className="w-full rounded-lg" />
                                 <div className="mt-3 space-y-2">
-                                    <span className="block text-primary text-sm">{items.created}</span>
+                                    <span className="block text-primary text-sm">{post.created}</span>
                                     <h3 className="text-lg text-gray-800 duration-150 group-hover:text-indigo-600 font-semibold">
-                                        {items.title}
+                                        {post.title}
                                     </h3>
-                                    <p className="text-gray-600 text-sm duration-150 group-hover:text-gray-800">{items.blurb}</p>
+                                    <p className="text-gray-600 text-sm duration-150 group-hover:text-gray-800">{post.blurb}</p>
                                 </div>
                             </a>
                         </div>

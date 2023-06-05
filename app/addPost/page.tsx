@@ -7,6 +7,8 @@ import { supabase } from '@/utils/supabaseClient';
 export default function AddPost() {
   const [title, setTitle] = useState('');
   const [author, setAuthor] = useState('');
+  const [blurb, setBlurb] = useState('');
+  const [slug, setSlug] = useState('');
   const [content, setContent] = useState('');
   const [tags, setTags] = useState('');
   const [image, setImage] = useState(null);
@@ -78,10 +80,10 @@ export default function AddPost() {
   };
 
   return (
-    <div className='bg-off-white'>
-    <div className='h-screen flex items-center justify-center px-8'>
-        <form onSubmit={handleSubmit} className='flex flex-col items-center justify-center w-full'>
-        <h2 className='mb-4'>Add a Post</h2>
+    <div className='bg-off-white '>
+    <div className='flex items-center justify-center px-20 max-w-5xl mx-auto'>
+        <form onSubmit={handleSubmit} className='my-8 flex flex-col items-center justify-center w-full'>
+        <h2 className='mb-4'>Add Post</h2>
         <div className='flex flex-col mb-4 w-full'>
             <label className='justify-start text-gray mb-2'>Post Title</label>
             <input 
@@ -93,6 +95,18 @@ export default function AddPost() {
             <input 
             className='p-2 rounded-md mb-4 w-full'
             type="text" value={author} onChange={e => setAuthor(e.target.value)} placeholder="Author" required />
+        </div>
+        <div className='flex flex-col mb-4 w-full'>
+            <label className='justify-start text-gray mb-2'>Blurb</label>
+            <input 
+            className='p-2 rounded-md mb-4 w-full'
+            type="text" value={blurb} onChange={e => setBlurb(e.target.value)} placeholder="Author" required />
+        </div>
+        <div className='flex flex-col mb-4 w-full'>
+            <label className='justify-start text-gray mb-2'>Slug</label>
+            <input 
+            className='p-2 rounded-md mb-4 w-full'
+            type="text" value={slug} onChange={e => setSlug(e.target.value)} placeholder="Author" required />
         </div>
         <div className='flex flex-col mb-4 w-full'>
             <label className='justify-start text-gray mb-2'>Content</label>
