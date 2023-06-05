@@ -13,7 +13,7 @@ export default function AddPost() {
   const [tags, setTags] = useState('');
   const [image, setImage] = useState(null);
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
   // Upload the image to Supabase Storage
