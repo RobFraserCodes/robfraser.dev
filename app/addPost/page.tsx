@@ -63,7 +63,7 @@ export default function AddPost() {
     // Add each tag to the tags table and link it to the new post
     const tagArray = tags.split(','); // Split tags by comma
     for (const tagName of tagArray) {
-      let tag: any;
+      let tag: string;
       
       // Check if tag already exists
       const { data: existingTags, error: getTagError } = await supabase
@@ -82,7 +82,7 @@ export default function AddPost() {
           .from('tags')
           .insert([
             { tag_name: tagName.trim() },
-          ]);
+          ]) as { data: { id: number, tag_name: string }[] | null, error: Error | null };
           
         if (insertTagError) console.error('Error inserting tag: ', insertTagError);
         if (newTag && newTag.length > 0) {
