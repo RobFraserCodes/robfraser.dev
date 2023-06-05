@@ -60,48 +60,48 @@ export default function AddPost() {
       return;
     }
     
-  // Add each tag to the tags table and link it to the new post
-  const tagArray = tags.split(','); // Split tags by comma
-  for (const tagName of tagArray) {
-    let tag: any;
-    
-    // Check if tag already exists
-    const { data: existingTags, error: getTagError } = await supabase
-      .from('tags')
-      .select('id')
-      .eq('tag_name', tagName.trim());
-    
-    if (getTagError) console.error('Error getting tag: ', getTagError);
-    
-    if (existingTags && existingTags.length > 0) {
-      // If tag exists, use the existing tag
-      tag = existingTags[0];
-    } else {
-      // If tag doesn't exist, create a new one
-      const { data: newTag, error: insertTagError } = await supabase
+    // Add each tag to the tags table and link it to the new post
+    const tagArray = tags.split(','); // Split tags by comma
+    for (const tagName of tagArray) {
+      let tag: any;
+      
+      // Check if tag already exists
+      const { data: existingTags, error: getTagError } = await supabase
         .from('tags')
-        .insert([
-          { tag_name: tagName.trim() },
-        ]);
-        
-      if (insertTagError) console.error('Error inserting tag: ', insertTagError);
-      if (newTag && newTag.length > 0) {
-        tag = newTag[0];
+        .select('id')
+        .eq('tag_name', tagName.trim());
+      
+      if (getTagError) console.error('Error getting tag: ', getTagError);
+      
+      if (existingTags && existingTags.length > 0) {
+        // If tag exists, use the existing tag
+        tag = existingTags[0];
+      } else {
+        // If tag doesn't exist, create a new one
+        const { data: newTag, error: insertTagError } = await supabase
+          .from('tags')
+          .insert([
+            { tag_name: tagName.trim() },
+          ]);
+          
+        if (insertTagError) console.error('Error inserting tag: ', insertTagError);
+        if (newTag && newTag.length > 0) {
+          tag = newTag[0];
+        }
+      }
+
+      // Link the tag to the new post
+      if (tag) {
+        const { data: postTag, error: postTagError } = await supabase
+          .from('post_tags')
+          .insert([
+            { post_id: data[0].id, tag_id: tag.id },
+          ]);
+          
+        if (postTagError) console.error('Error inserting post-tag: ', postTagError);
       }
     }
 
-    // Link the tag to the new post
-    if (tag) {
-      const { data: postTag, error: postTagError } = await supabase
-        .from('post_tags')
-        .insert([
-          { post_id: data[0].id, tag_id: tag.id },
-        ]);
-        
-      if (postTagError) console.error('Error inserting post-tag: ', postTagError);
-    }
-}
-    
     // Reset form
     setTitle('');
     setAuthor('');
