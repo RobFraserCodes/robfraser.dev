@@ -79,31 +79,31 @@ export default function AddPost() {
             <label className='justify-start text-gray mb-2'>Post Title</label>
             <input 
             className='p-2 rounded-md mb-4 w-full'
-            type="text" value={title} onChange={e => setTitle(e.target.value)} placeholder="Title" required />
+            type="text" value={title ?? ''} onChange={e => setTitle(e.target.value)} placeholder="Title" required />
         </div>
         <div className='flex flex-col mb-4 w-full'>
             <label className='justify-start text-gray mb-2'>Author</label>
             <input 
             className='p-2 rounded-md mb-4 w-full'
-            type="text" value={author} onChange={e => setAuthor(e.target.value)} placeholder="Author" required />
+            type="text" value={author ?? ''} onChange={e => setAuthor(e.target.value)} placeholder="Author" required />
         </div>
         <div className='flex flex-col mb-4 w-full'>
             <label className='justify-start text-gray mb-2'>Blurb</label>
             <input 
             className='p-2 rounded-md mb-4 w-full'
-            type="text" value={blurb} onChange={e => setBlurb(e.target.value)} placeholder="Blurb" required />
+            type="text" value={blurb ?? ''} onChange={e => setBlurb(e.target.value)} placeholder="Blurb" required />
         </div>
         <div className='flex flex-col mb-4 w-full'>
             <label className='justify-start text-gray mb-2'>Slug</label>
             <input 
             className='p-2 rounded-md mb-4 w-full'
-            type="text" value={slug} onChange={e => setSlug(e.target.value)} placeholder="Slug" required />
+            type="text" value={slug ?? ''} onChange={e => setSlug(e.target.value)} placeholder="Slug" required />
         </div>
         <div className='flex flex-col mb-4 w-full'>
             <label className='justify-start text-gray mb-2'>Content</label>
             <textarea 
             className='p-2 rounded-md mb-4 w-full'
-            rows={10} value={content} onChange={e => setContent(e.target.value)} placeholder="Content" required />
+            rows={10} value={content ?? ''} onChange={e => setContent(e.target.value)} placeholder="Content" required />
         </div>
         <div className='flex flex-col mb-4 w-full'>
             <label className='justify-start text-gray mb-2'>Image</label>
