@@ -3,7 +3,7 @@
 import supabase from '@/lib/supabaseClient';
 import useSWR from 'swr';
 import { Skeleton } from '@/components/ui/skeleton';
-import EmailSubscribe from '../../components/subComponents/emailSubscribe';
+import EmailSubscribe from '@/components/subComponents/emailSubscribe';
 
 async function fetcher() {
   let { data, error } = await supabase
