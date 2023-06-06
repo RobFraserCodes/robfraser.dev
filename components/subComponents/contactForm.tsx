@@ -1,5 +1,5 @@
 import React, { FormEvent, useState } from 'react';
-import { supabase } from '@/utils/supabaseClient';
+import supabase from '@/lib/supabaseClient';
 
 const ContactForm: React.FC = () => {
   const [formState, setFormState] = useState({
