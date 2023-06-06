@@ -61,7 +61,7 @@ export default function Navbar() {
                         <span className='hidden w-px h-6 bg-black/30 dark:bg-white/30 lg:block'></span>
                         <div className='space-y-3 items-center gap-x-6 md:flex md:space-y-0'>
                             <li>
-                                <a href="/CVPage" className="hidden lg:block py-3 text-center text-black dark:text-white hover:text-primary border rounded-lg md:border-none text-lg">
+                                <a href="/cv" className="hidden lg:block py-3 text-center text-black dark:text-white hover:text-primary border rounded-lg md:border-none text-lg">
                                     My CV
                                 </a>
                             </li>

@@ -14,7 +14,7 @@ function HeroSection() {
   };
 
   return (
-    <section className="bg-white">
+    <section className="bg-off-white">
     <div className="max-w-screen-xl mx-auto px-4 py-28 gap-12 text-gray-600 md:px-8">
         <div className="space-y-5 max-w-4xl mx-auto text-center">
             <h1 className="text-sm text-indigo-600 font-medium">
