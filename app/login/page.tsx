@@ -12,10 +12,6 @@ type Inputs = {
 
 const loginPage = () => {
     const { register, handleSubmit } = useForm();
-    async function login(data: any) {
-        const authData = await pb.collection("users")
-        .authWithPassword(data.email, data.password);
-    }
 
     return (
         <main className="w-full flex">
