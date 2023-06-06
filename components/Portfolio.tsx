@@ -30,5 +30,5 @@ return (
   );
 };
   
-  export default Portfolio;
+export default Portfolio;
   

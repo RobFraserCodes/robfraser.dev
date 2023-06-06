@@ -1,7 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
-import meeting from '../../public/06.png';
-import shape from '../../public/07.png';
+import meeting from '../public/06.png';
+import shape from '../public/07.png';
 
 type Props = {}
 

@@ -1,4 +1,4 @@
-import SocialIcons from '@/app/components/subComponents/socialIcons';
+import SocialIcons from '@/components/subComponents/socialIcons';
 
 const Head = () => {
   return (

@@ -1,6 +1,5 @@
 import React from 'react';
-import Footer from '../components/Footer';
-import NavBar from '../components/NavBar';
+import NavBar from '@/components/NavBar';
 
 interface CVLayoutProps {
   children: React.ReactNode;
@@ -9,7 +8,7 @@ interface CVLayoutProps {
 const CVLayout: React.FC<CVLayoutProps> = ({ children }) => {
   return (
     <div className=' text-slate-950'>
-        <NavBar />
+      <NavBar />
       {children}
     </div>
   );

@@ -4,7 +4,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import SocialIcons from './subComponents/socialIcons';
 import Image from 'next/image';
-import shape from '../../public/05.png';
+import shape from '../public/05.png';
 import Skew from './subComponents/skew';
 
 type Props = {};

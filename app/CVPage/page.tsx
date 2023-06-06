@@ -2,7 +2,7 @@
 
 import React from 'react';
 // import dynamic from 'next/dynamic'; // Remove this line
-import SocialIcons from '../components/subComponents/socialIcons';
+import SocialIcons from '../../components/subComponents/socialIcons';
 import Head from './components/Head';
 import TopBar from './components/TopBar';
 //import html2canvas from 'html2canvas';
