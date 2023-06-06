@@ -1,17 +1,58 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useRef } from 'react';
+import supabase from '@/lib/supabaseClient';
+import TypeSelection from './TypeSelection';
+import ServiceSelection from './ServiceSelection';
+import FeatureSelection from './FeatureSelection';
+import ContactForm from './ContactForm';
 
 function HeroSection() {
-  let [isOpen, setIsOpen] = useState(true);
+    const [step, setStep] = useState(1);
+    const [showImage, setShowImage] = useState(true);
+    const [type, setType] = useState(""); // Mobile / Website
+    const [service, setService] = useState(""); // UX Design / Development / Both
+    const [feature, setFeature] = useState(""); // Blog / eCommerce / Custom
+    const [contact, setContact] = useState({name: "", email: "", phone: ""});
+    
+    const formRef = useRef(null);
 
-  const openDialog = () => {
-    setIsOpen(true);
-  };
+    const handleTypeSelection = (selectedType) => {
+        setType(selectedType);
+        setStep(2);
+    };
+    
+    const handleServiceSelection = (selectedService) => {
+        setService(selectedService);
+        setStep(3);
+    };
+    
+    const handleFeatureSelection = (selectedFeature) => {
+        setFeature(selectedFeature);
+        setStep(4);
+    };
+    
+    const handleContactSubmission = async (e) => {
+        e.preventDefault();
+        const { data, error } = await supabase
+        .from('leads')
+        .insert([
+            { type: type, service: service, feature: feature, name: contact.name, email: contact.email, phone: contact.phone },
+        ]);
+        // Handle success and error situations
+        if (error) {
+            console.error('Error inserting data: ', error);
+        } else {
+            // Reset form or do something else
+            setStep(1);
+        }
+    };
 
-  const closeDialog = () => {
-    setIsOpen(false);
-  };
+    const handleGetQuoteClick = () => {
+        setShowImage(false);
+        setStep(1);
+        formRef.current.scrollIntoView({ behavior: 'smooth' });
+    };
 
   return (
     <section className="bg-off-white">
@@ -26,9 +67,10 @@ function HeroSection() {
             <p className="max-w-2xl mx-auto">
                 Creating Exceptional User Experiences with Innovative Design and Modern Technologies.
             </p>
-        <div className="items-center justify-center gap-x-3 space-y-3 sm:flex sm:space-y-0">
+        </div>
+        <div className="items-center justify-center gap-x-3 space-y-3 sm:flex sm:space-y-0 my-8">
         <a
-            onClick={openDialog}
+            onClick={handleGetQuoteClick}
             className="block py-2 px-4 text-white font-medium bg-primary duration-150 hover:bg-primary-dark active:bg-indigo-700 rounded-lg shadow-lg hover:shadow-none"
         >
             Get a quote
@@ -37,12 +79,35 @@ function HeroSection() {
             Retrieve a saved quote
         </a>
         </div>
-        </div>
-        <div className="mt-14">
-            <img src="https://res.cloudinary.com/floatui/image/upload/v1670150563/desktop_dte2ar.png" className="w-full shadow-lg rounded-lg border" alt="" />
-        </div>
-    </div>
+        <div ref={formRef} className="mt-14">
+        {showImage ? (
+          <img src="/enquiry/enquiry-step-1.png" alt="Mockup of a desktop website" />
+        ) : (
+          <form action="" className="space-y-8">
+            {/* Render the step based on the current step */}
+            {step === 1 && (
+              <TypeSelection handleTypeSelection={handleTypeSelection} />
+            )}
 
+            {step === 2 && (
+              <ServiceSelection handleServiceSelection={handleServiceSelection} />
+            )}
+
+            {step === 3 && (
+              <FeatureSelection handleFeatureSelection={handleFeatureSelection} />
+            )}
+
+            {step === 4 && (
+              <ContactForm
+                contact={contact}
+                setContact={setContact}
+                handleContactSubmission={handleContactSubmission}
+              />
+            )}
+          </form>
+        )}
+    </div>
+    </div>
     </section>
   );
 }
