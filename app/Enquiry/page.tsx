@@ -1,5 +1,4 @@
 import Navbar from "@/components/NavBar";
-import Features from "./components/Features";
 import HeroSection from "./components/HeroSection";
 
 
@@ -8,7 +7,6 @@ function EnquiryPage() {
         <div>
             <Navbar />
             <HeroSection />
-            <Features />
         </div>
     )
 }
