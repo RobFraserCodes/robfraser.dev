@@ -66,7 +66,7 @@ export default function Navbar() {
                                 </a>
                             </li>
                             <li>
-                                <a href="/enquiry" className="hidden py-3 px-4 font-medium text-center text-white bg-primary hover:bg-primary-dark active:bg-primary-dark active:shadow-none rounded-lg shadow lg:inline uppercase">
+                                <a href="/Enquiry" className="hidden py-3 px-4 font-medium text-center text-white bg-primary hover:bg-primary-dark active:bg-primary-dark active:shadow-none rounded-lg shadow lg:inline uppercase">
                                     Build My App
                                 </a>
                             </li>
