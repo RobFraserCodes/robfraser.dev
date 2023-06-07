@@ -46,10 +46,11 @@ function HeroSection() {
     setStep(4);
   };
 
-  const handleProjectTimeline = (e: ChangeEvent<HTMLInputElement>) => {
-    setContact({ ...contact, timescale: e.target.value });
+  const handleProjectTimeline = (e: React.MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault();
+    setContact({ ...contact, timescale: contact.timescale });
     setStep(5);
-  }
+  };  
 
   const handleContactSubmission = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
