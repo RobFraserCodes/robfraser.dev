@@ -2,10 +2,10 @@
 
 import { useState, useRef } from 'react';
 import supabase from '@/lib/supabaseClient';
-import TypeSelection from './TypeSelection';
-import ServiceSelection from './ServiceSelection';
-import FeatureSelection from './FeatureSelection';
-import ContactForm from './ContactForm';
+import TypeSelection from '../components/TypeSelection';
+import ServiceSelection from '../components/ServiceSelection';
+import FeatureSelection from '../components/FeatureSelection';
+import ContactForm from '../components/ContactForm';
 
 function HeroSection() {
     const [step, setStep] = useState(1);
