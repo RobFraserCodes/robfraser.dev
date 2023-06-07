@@ -150,7 +150,7 @@ function HeroSection() {
                       setContact({ ...contact, timescale: e.target.value })
                     }
                   />
-                <button onClick={handleProjectTimeline} className="w-full p-3 rounded bg-primary text-white font-medium duration-150 hover:bg-primary-dark active:bg-indigo-700">>Submit</button>
+                <button onClick={handleProjectTimeline} className="w-full p-3 rounded bg-primary text-white font-medium duration-150 hover:bg-primary-dark active:bg-indigo-700">Submit</button>
                 </div>
               )}
               {step === 5 && (
