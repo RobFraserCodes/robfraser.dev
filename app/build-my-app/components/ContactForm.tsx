@@ -1,4 +1,5 @@
 import { ChangeEvent } from "react";
+import { FormEvent } from 'react';
 
 interface Contact {
     name: string;
@@ -6,7 +7,7 @@ interface Contact {
     phone: string;
 }
 
-function ContactForm({ contact, setContact, handleContactSubmission }: { contact: Contact; setContact: Function; handleContactSubmission: Function }) {
+function ContactForm({ contact, setContact, handleContactSubmission }: { contact: Contact; setContact: Function; handleContactSubmission: (event: FormEvent<HTMLFormElement>) => void }) {
     const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
       setContact({ ...contact, [e.target.name]: e.target.value });
     };
