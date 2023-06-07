@@ -2,12 +2,12 @@
 
 import { useState } from 'react';
 
-function FeatureSelection({ handleFeatureSelection }) {
+function FeatureSelection({ handleFeatureSelection }: { handleFeatureSelection: (feature: string) => void }) {
     const [selectedFeature, setSelectedFeature] = useState('');
-
-    const handleSelection = (feature) => {
-        setSelectedFeature(feature);
-        handleFeatureSelection(feature);
+  
+    const handleSelection = (feature: string) => {
+      setSelectedFeature(feature);
+      handleFeatureSelection(feature);
     };
 
     return (
