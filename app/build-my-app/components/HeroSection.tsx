@@ -15,7 +15,7 @@ function HeroSection() {
     const [feature, setFeature] = useState(""); // Blog / eCommerce / Custom
     const [contact, setContact] = useState({name: "", email: "", phone: ""});
     
-    const formRef = useRef(null);
+    const formRef = useRef<HTMLFormElement>(null);
 
     const handleTypeSelection = (selectedType: string) => {
       setType(selectedType);
