@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useRef, ChangeEvent } from 'react';
+import { useState, useRef, ChangeEvent, FormEvent } from 'react';
 import supabase from '@/lib/supabaseClient';
 import TypeSelection from '../components/TypeSelection';
 import ServiceSelection from '../components/ServiceSelection';
