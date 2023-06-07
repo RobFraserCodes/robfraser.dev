@@ -2,10 +2,14 @@
 
 import { useState } from 'react';
 
-function TypeSelection({ handleTypeSelection }) {
+interface TypeSelectionProps {
+    handleTypeSelection: (type: string) => void;
+}
+
+function TypeSelection({ handleTypeSelection }: TypeSelectionProps) {
     const [selectedType, setSelectedType] = useState('');
 
-    const handleSelection = (type) => {
+    const handleSelection = (type: string) => {
     setSelectedType(type);
     handleTypeSelection(type);
     };
