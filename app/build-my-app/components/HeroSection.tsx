@@ -51,7 +51,7 @@ function HeroSection() {
     const handleGetQuoteClick = () => {
         setShowImage(false);
         setStep(1);
-        formRef.current.scrollIntoView({ behavior: 'smooth' });
+        formRef.current?.scrollIntoView({ behavior: 'smooth' });
     };
 
   return (
