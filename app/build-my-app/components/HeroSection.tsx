@@ -32,20 +32,27 @@ function HeroSection() {
         setStep(4);
     };
     
-    const handleContactSubmission = async (e: ChangeEvent<HTMLInputElement>) => {
-        e.preventDefault();
-        const { data, error } = await supabase
+    const handleContactSubmission = async (e: FormEvent<HTMLFormElement>) => {
+      e.preventDefault();
+      const { data, error } = await supabase
         .from('leads')
         .insert([
-            { type: type, service: service, feature: feature, name: contact.name, email: contact.email, phone: contact.phone },
+          {
+            type: type,
+            service: service,
+            feature: feature,
+            name: contact.name,
+            email: contact.email,
+            phone: contact.phone,
+          },
         ]);
-        // Handle success and error situations
-        if (error) {
-            console.error('Error inserting data: ', error);
-        } else {
-            // Reset form or do something else
-            setStep(1);
-        }
+      // Handle success and error situations
+      if (error) {
+        console.error('Error inserting data: ', error);
+      } else {
+        // Reset form or do something else
+        setStep(1);
+      }
     };
 
     const handleGetQuoteClick = () => {
