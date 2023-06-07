@@ -46,8 +46,9 @@ function HeroSection() {
     setStep(4);
   };
 
-  const handleProjectTimeline = (e: React.MouseEvent<HTMLButtonElement>) => {
+  const handleProjectTimeline = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
     e.preventDefault();
+    const target = e.currentTarget as HTMLButtonElement;
     setContact({ ...contact, timescale: contact.timescale });
     setStep(5);
   };  
