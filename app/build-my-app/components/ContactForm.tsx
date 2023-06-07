@@ -1,4 +1,8 @@
-
+interface Contact {
+    name: string;
+    email: string;
+    phone: string;
+}
 
 function ContactForm({ contact, setContact, handleContactSubmission }) {
     const handleChange = (e) => {
