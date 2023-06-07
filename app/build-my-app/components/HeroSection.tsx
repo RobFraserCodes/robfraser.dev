@@ -1,3 +1,5 @@
+'use client';
+
 import { useState, useRef, ChangeEvent, FormEvent } from 'react';
 import supabase from '@/lib/supabaseClient';
 import TypeSelection from '../components/TypeSelection';
@@ -43,6 +45,11 @@ function HeroSection() {
     setFeature(selectedFeature);
     setStep(4);
   };
+
+  const handleProjectTimeline = (e: ChangeEvent<HTMLInputElement>) => {
+    setContact({ ...contact, timescale: e.target.value });
+    setStep(5);
+  }
 
   const handleContactSubmission = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -122,6 +129,7 @@ function HeroSection() {
               )}
 
               {step === 4 && (
+                //  Project Timeline
                 <div>
                   <textarea
                     className="w-full p-3 rounded border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
@@ -140,12 +148,15 @@ function HeroSection() {
                       setContact({ ...contact, timescale: e.target.value })
                     }
                   />
-                  <ContactForm
-                    contact={contact}
-                    setContact={setContact}
-                    handleContactSubmission={handleContactSubmission}
-                  />
+                <button onClick={handleProjectTimeline} className="w-full p-3 rounded bg-primary text-white font-medium duration-150 hover:bg-primary-dark active:bg-indigo-700">>Submit</button>
                 </div>
+              )}
+              {step === 5 && (
+                <ContactForm
+                  contact={contact}
+                  setContact={setContact}
+                  handleContactSubmission={handleContactSubmission}
+                />
               )}
             </form>
           )}

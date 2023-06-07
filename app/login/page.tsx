@@ -49,7 +49,7 @@ const LoginPage = () => {
             >
               Login
             </button>
-            <h4 className="justify-center text-center">Forgot password?</h4>
+            {/* <h4 className="justify-center text-center">Forgot password?</h4> */}
           </form>
         </div>
       </div>
