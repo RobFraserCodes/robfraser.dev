@@ -4,7 +4,7 @@ interface Contact {
     phone: string;
 }
 
-function ContactForm({ contact, setContact, handleContactSubmission }) {
+function ContactForm({ contact, setContact, handleContactSubmission }: { contact: Contact; setContact: Function; handleContactSubmission: Function }) {
     const handleChange = (e) => {
       setContact({...contact, [e.target.name]: e.target.value });
     };
