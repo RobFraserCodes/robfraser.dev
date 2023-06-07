@@ -103,7 +103,7 @@ function HeroSection() {
         <div className="items-center justify-center gap-x-3 space-y-3 sm:flex sm:space-y-0 my-8">
           <a
             onClick={handleGetQuoteClick}
-            className="block py-2 px-4 text-white font-medium bg-primary duration-150 hover:bg-primary-dark active:bg-indigo-700 rounded-lg shadow-lg hover:shadow-none"
+            className="block py-2 px-4 text-white font-medium bg-primary duration-150 hover:bg-primary-dark active:bg-indigo-700 rounded-lg shadow-lg hover:shadow-none cursor-pointer"
           >
             Get a quote
           </a>
