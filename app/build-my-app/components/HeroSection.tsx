@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useRef } from 'react';
+import { useState, useRef, ChangeEvent } from 'react';
 import supabase from '@/lib/supabaseClient';
 import TypeSelection from '../components/TypeSelection';
 import ServiceSelection from '../components/ServiceSelection';
@@ -17,22 +17,22 @@ function HeroSection() {
     
     const formRef = useRef(null);
 
-    const handleTypeSelection = (selectedType) => {
-        setType(selectedType);
-        setStep(2);
+    const handleTypeSelection = (selectedType: string) => {
+      setType(selectedType);
+      setStep(2);
     };
     
-    const handleServiceSelection = (selectedService) => {
+    const handleServiceSelection = (selectedService: string) => {
         setService(selectedService);
         setStep(3);
     };
     
-    const handleFeatureSelection = (selectedFeature) => {
+    const handleFeatureSelection = (selectedFeature: string) => {
         setFeature(selectedFeature);
         setStep(4);
     };
     
-    const handleContactSubmission = async (e) => {
+    const handleContactSubmission = async (e: ChangeEvent<HTMLInputElement>) => {
         e.preventDefault();
         const { data, error } = await supabase
         .from('leads')
