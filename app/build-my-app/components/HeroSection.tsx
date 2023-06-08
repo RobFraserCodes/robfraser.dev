@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useRef, ChangeEvent, FormEvent } from 'react';
+import Image from 'next/image';
 import supabase from '@/lib/supabaseClient';
 import TypeSelection from '../components/TypeSelection';
 import ServiceSelection from '../components/ServiceSelection';
@@ -56,6 +57,7 @@ function HeroSection() {
   const handleContactSubmission = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const { data, error } = await supabase
+    console.log(data, error)
       .from('leads')
       .insert([
         {
@@ -69,12 +71,19 @@ function HeroSection() {
           timescale: contact.timescale,
         },
       ]);
-    // Handle success and error situations
+  
     if (error) {
       console.error('Error inserting data: ', error);
     } else {
-      // Reset form or do something else
-      setStep(1);
+      console.log('Data inserted successfully');
+      // setStep(1);
+      setContact({
+        name: "",
+        email: "",
+        phone: "",
+        description: "",
+        timescale: "",
+      });
     }
   };
 
@@ -85,31 +94,31 @@ function HeroSection() {
   };
 
   return (
-    <section className="bg-off-white">
+    <section className="bg-off-white dark:bg-dark">
       <div className="max-w-screen-xl mx-auto px-4 py-28 gap-12 text-gray-600 md:px-8">
-        <div className="space-y-5 max-w-4xl mx-auto text-center">
-          <h1 className="text-sm text-indigo-600 font-medium">
-            Custom built websites and apps
-          </h1>
-          <h2 className="text-4xl text-gray-800 font-extrabold mx-auto md:text-5xl">
-            Elevate your business with{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#4F46E5] to-[#E114E5]">
-              Professional Design and Development.
-            </span>
-          </h2>
-          <p className="max-w-2xl mx-auto">
-            Creating Exceptional User Experiences with Innovative Design and Modern Technologies.
-          </p>
-        </div>
-        <div className="items-center justify-center gap-x-3 space-y-3 sm:flex sm:space-y-0 my-8">
+          <div className={`space-y-5 max-w-4xl mx-auto text-center ${showImage ? 'show' : 'hide'}`}>
+            <h1 className="text-sm dark:text-white font-medium">
+              Custom built websites and apps
+            </h1>
+            <h2 className="text-4xl dark:text-white font-extrabold mx-auto md:text-5xl">
+              Elevate your business with
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#4F46E5] to-[#E114E5]">
+                Professional Design and Development.
+              </span>
+            </h2>
+            <p className="max-w-2xl mx-auto dark:text-white">
+              Creating Exceptional User Experiences with Innovative Design and Modern Technologies.
+            </p>
+          </div>
+        <div className="items-center justify-center gap-x-3 space-y-3 sm:flex sm:space-y-0 my-8 mx-12">
           <a
             onClick={handleGetQuoteClick}
-            className="block p-3 text-white font-medium bg-primary duration-150 hover:bg-primary-dark active:bg-indigo-700 rounded-lg shadow-lg hover:shadow-none"
-          >
-            Get a quote
+            className="block p-3 text-white font-medium bg-primary duration-150 hover:bg-primary-dark rounded text-center shadow-lg hover:cursor-pointer" >
+            Start
           </a>
-          <a href="/login" className="block p-3 text-gray-700 hover:text-gray-500 font-medium duration-150 active:bg-gray-100 border rounded">
-            Retrieve a saved quote
+          <a 
+            href="/login" className="block p-3 dark:text-white hover:text-gray font-medium duration-150 active:bg-gray/50 border rounded text-center">
+            Retrieve saved quote
           </a>
         </div>
         <div ref={formRef} className="mt-14">
@@ -132,26 +141,37 @@ function HeroSection() {
 
               {step === 4 && (
                 //  Project Timeline
-                <div>
+              <div className='flex flex-col-reverse md:flex-row justify-center items-center gap-x-0 md:gap-x-8 gap-y-8 md:gap-y-0'>  
+                <div className='hidden md:block shadow-sm rounded-md'>
+                  <Image src="/tablet.png" alt="Mockup of a desktop website" width={500} height={500} />
+                </div>
+                <div className='p-8'>
+                  <label htmlFor="" className='text-gray/50 pb-2'>Project Description</label>
                   <textarea
-                    className="w-full p-3 rounded border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
-                    placeholder="Description of your project"
+                    className="border border-gray/20 w-full p-3 rounded border-gray-300 focus:outline-none focus:ring-primary focus:border-primary"
+                    placeholder="Please write a short description of your project"
                     value={contact.description}
                     onChange={(e: ChangeEvent<HTMLTextAreaElement>) =>
                       setContact({ ...contact, description: e.target.value })
                     }
                   ></textarea>
-                  <input
-                    type="text"
-                    className="w-full p-3 rounded border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
-                    placeholder="Timescale"
-                    value={contact.timescale}
-                    onChange={(e: ChangeEvent<HTMLInputElement>) =>
-                      setContact({ ...contact, timescale: e.target.value })
-                    }
-                  />
-                <button onClick={handleProjectTimeline} className="w-full p-3 rounded bg-primary text-white font-medium duration-150 hover:bg-primary-dark active:bg-indigo-700">Submit</button>
+                  <label htmlFor="" className='text-gray/50 pb-2'>When do you need the project?</label>
+                  <select
+                  className="border border-gray/20 mb-14 w-full p-3 rounded border-gray-300 focus:outline-none focus:ring-primary focus:border-primary"
+                  value={contact.timescale}
+                  onChange={(e: ChangeEvent<HTMLSelectElement>) =>
+                    setContact({ ...contact, timescale: e.target.value })
+                  }
+                >
+                  <option value="">Select a timeline</option>
+                  <option value="asap">As soon as possible</option>
+                  <option value="1-2 months">1-2 Months</option>
+                  <option value="3+ months">3+ Months</option>
+                </select>
+                <button onClick={handleProjectTimeline} className="w-full p-3 rounded bg-primary text-white font-medium duration-150 hover:bg-primary-dark active:bg-primary-light">
+                  Next</button>
                 </div>
+              </div>
               )}
               {step === 5 && (
                 <ContactForm
