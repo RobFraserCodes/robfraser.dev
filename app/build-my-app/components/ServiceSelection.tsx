@@ -1,6 +1,8 @@
 'use client';
 
 import { useState } from 'react';
+import Image from 'next/image';
+import uxDesign from '/public/discuss.png';
 
 interface ServiceSelectionProps {
     handleServiceSelection: (service: string) => void;
@@ -19,7 +21,8 @@ function ServiceSelection({ handleServiceSelection }: ServiceSelectionProps) {
             <h3 className='mb-14'>What type of service do you need?</h3>
             <div className="flex justify-around">
                 <div className="text-center">
-                    <button className="mt-2 block w-full p-3 rounded bg-primary text-white font-semibold focus:outline-none"
+                    <Image src={uxDesign} width={300} />
+                    <button className="mt-2 block w-full p-3 rounded bg-primary hover:bg-primary-dark text-white font-semibold focus:outline-none"
                         onClick={() => handleSelection('UX Design')}>
                         UX Design
                     </button>

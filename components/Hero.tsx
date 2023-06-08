@@ -4,7 +4,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import SocialIcons from './subComponents/socialIcons';
 import Image from 'next/image';
-import shape from '../public/05.png';
+import profile from '../public/profile.png';
 import Skew from './subComponents/skew';
 
 type Props = {};
@@ -29,7 +29,7 @@ const Hero: React.FC<Props> = () => {
               }}
             >
               <div className="absolute w-112 h-112 overflow-hidden rounded-full">
-                <Image src={shape} alt="Rob Fraser, UX Developer 3D portrait" />
+                <Image src={profile} alt="Rob Fraser, UX Developer 3D portrait" />
               </div>
             </motion.div>
           </div>
