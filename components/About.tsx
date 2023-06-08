@@ -1,7 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
-import meeting from '../public/06.png';
-import shape from '../public/07.png';
+import meeting from '/public/coding.png';
+import sitting from '/public/sitting.png';
 
 type Props = {}
 
@@ -24,7 +24,7 @@ function About({}: Props) {
             <p className='mb-4'>Whether you need help designing a new product, optimising an existing one, or building a custom web application from scratch, I am here to help. Feel free to browse my portfolio and get in touch if you have any questions or would like to discuss a project. Let&apos;s work together to create something amazing!</p>
         </div>
           <div className='mx-auto'>
-              <Image className="w-full lg:w-[400px]" src={shape} alt="" />
+              <Image className="w-full lg:w-[400px]" src={sitting} alt="" />
           </div>
         </div>
       </div>
