@@ -141,7 +141,7 @@ function HeroSection() {
 
               {step === 4 && (
                 //  Project Timeline
-              <div className='flex flex-col-reverse md:flex-row justify-center items-center gap-x-0 md:gap-x-8 gap-y-8 md:gap-y-0'>  
+              <div className='flex flex-col-reverse md:flex-row justify-center min-h-screen items-center gap-x-0 md:gap-x-8 gap-y-8 md:gap-y-0'>  
                 <div className='hidden md:block shadow-sm rounded-md'>
                   <Image src="/tablet.png" alt="Mockup of a desktop website" width={500} height={500} />
                 </div>
