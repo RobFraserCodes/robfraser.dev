@@ -48,10 +48,9 @@ function HeroSection() {
     setStep(4);
   };
 
-  const handleProjectTimeline = (selectedTimeline: string) => {
-    setTimeline(selectedTimeline);
+  const handleProjectTimeline = () => {
     setStep(5);
-  };  
+  };    
   
   const handleContactSubmission = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
