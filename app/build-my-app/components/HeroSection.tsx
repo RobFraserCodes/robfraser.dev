@@ -48,8 +48,8 @@ function HeroSection() {
     setStep(4);
   };
 
-  const handleProjectTimeline = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
-    setTimeline(timeline);
+  const handleProjectTimeline = (selectedTimeline: string) => {
+    setTimeline(selectedTimeline);
     setStep(5);
   };  
   
