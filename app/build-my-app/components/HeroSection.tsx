@@ -30,6 +30,8 @@ function HeroSection() {
     timescale: "",
   });
 
+  const [timeline, setTimeline] = useState("");
+
   const formRef = useRef<HTMLDivElement>(null);
 
   const handleTypeSelection = (selectedType: string) => {
