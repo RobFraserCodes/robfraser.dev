@@ -31,7 +31,7 @@ function FeatureSelection({ handleFeatureSelection }: FeatureSelectionProps) {
   return (
     <div className="flex flex-col-reverse md:flex-row mx-8">
       <div className="md:w-1/3 flex flex-col md:flex-row justify-around mx-auto pt-20">
-        <Image src={coding} width={300} height={300} />
+        <Image src={coding} width={300} height={300} alt='3D image of a man coding at his desk.' />
       </div>
       <div className="md:w-2/3 flex flex-col">
         <div className="mb-8">
