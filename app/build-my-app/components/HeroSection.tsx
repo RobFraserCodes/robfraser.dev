@@ -22,6 +22,7 @@ function HeroSection() {
   const [type, setType] = useState(""); // Mobile / Website
   const [service, setService] = useState(""); // UX Design / Development / Both
   const [feature, setFeature] = useState(""); // Existing website / website address
+  const [timeline, setTimeline] = useState("");
   const [contact, setContact] = useState<Contact>({
     name: "",
     email: "",
@@ -29,8 +30,6 @@ function HeroSection() {
     description: "",
     timescale: "",
   });
-
-  const [timeline, setTimeline] = useState("");
 
   const formRef = useRef<HTMLDivElement>(null);
 
