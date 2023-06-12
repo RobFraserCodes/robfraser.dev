@@ -49,7 +49,7 @@ function HeroSection() {
   };
 
   const handleProjectTimeline = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
-    setTimeline(selectedTimeline);
+    setTimeline(timeline);
     setStep(5);
   };  
   
