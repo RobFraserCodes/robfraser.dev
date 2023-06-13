@@ -63,7 +63,7 @@ function FeatureSelection({ handleFeatureSelection }: FeatureSelectionProps) {
           </div>
         )}
         <button
-          onClick={handleFeatureSelection}
+          onClick={() => handleFeatureSelection(selectedFeature, hasExistingWebsite, websiteAddress)}
           className="block w-full p-3 rounded bg-primary text-white font-semibold focus:outline-none"
         >
           Next
