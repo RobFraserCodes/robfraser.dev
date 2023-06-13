@@ -30,7 +30,10 @@ function BlogPage() {
         
         )}
       {posts && (
-        <EmailSubscribe />
+        <div>
+          <h1 className="text-dark text-3xl font-extrabold sm:text-4xl">Latest blog posts</h1>
+          <EmailSubscribe />
+        </div>
       )}
       {posts && (
         <div className='grid gap-x-8 gap-y-10 mt-16 sm:grid-cols-2 lg:grid-cols-3 pb-20'>
