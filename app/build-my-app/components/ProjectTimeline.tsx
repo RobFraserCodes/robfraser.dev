@@ -1,11 +1,12 @@
 import Image from 'next/image';
 import { useState, ChangeEvent } from 'react';
 
-interface ProjectTimelineProps {
-  contact: Contact;
-  setContact: (contact: Contact) => void;
-  handleProjectTimeline: () => void;
-  setFeature: (feature: string) => void;
+interface Contact {
+  name: string;
+  email: string;
+  phone: string;
+  description: string;
+  timescale: string;
 }
 
 function ProjectTimeline({ contact, setContact, handleProjectTimeline, setFeature }: ProjectTimelineProps) {
