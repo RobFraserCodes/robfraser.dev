@@ -47,9 +47,9 @@ function HeroSection() {
     setStep(4);
   };
 
-  const handleProjectTimeline = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+  const handleProjectTimeline = () => {
     setStep(5);
-  };
+  };  
   
   const handleContactSubmission = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
