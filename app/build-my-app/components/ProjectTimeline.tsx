@@ -9,6 +9,13 @@ interface Contact {
   timescale: string;
 }
 
+interface ProjectTimelineProps {
+  contact: Contact;
+  setContact: (contact: Contact) => void;
+  handleProjectTimeline: () => void;
+  setFeature: (feature: string) => void;
+}
+
 function ProjectTimeline({ contact, setContact, handleProjectTimeline, setFeature }: ProjectTimelineProps) {
   const [selectedTimeline, setSelectedTimeline] = useState("");
 
