@@ -32,7 +32,7 @@ function HeroSection() {
     description: "",
     timescale: "",
     website: "",
-  });
+  } as Contact);  
 
   const formRef = useRef<HTMLDivElement>(null);
 
@@ -96,7 +96,7 @@ function HeroSection() {
       console.error("Error inserting data: ", error);
     }
   };
-  
+
   const handleGetQuoteClick = () => {
     setShowImage(false);
     setStep(1);
