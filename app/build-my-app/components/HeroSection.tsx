@@ -32,7 +32,7 @@ function HeroSection() {
     description: "",
     timescale: "",
     website: "",
-  } as Contact);  
+  }) as [Contact, React.Dispatch<React.SetStateAction<Contact>>];  
 
   const formRef = useRef<HTMLDivElement>(null);
 
