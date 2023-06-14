@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { useState, ChangeEvent, SetStateAction } from 'react';
+import { useState, ChangeEvent, SetStateAction, Dispatch } from 'react';
 
 interface Contact {
   name: string;
