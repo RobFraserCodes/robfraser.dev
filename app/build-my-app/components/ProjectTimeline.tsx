@@ -11,7 +11,7 @@ interface Contact {
 
 interface ProjectTimelineProps {
   contact: Contact;
-  setContact: (contact: Contact) => void;
+  setContact: React.Dispatch<React.SetStateAction<Contact>>; // Update the type of setContact
   handleProjectTimeline: () => void;
   setFeature: (feature: string) => void;
 }
