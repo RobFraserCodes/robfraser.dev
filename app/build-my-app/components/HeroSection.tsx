@@ -64,6 +64,7 @@ function HeroSection() {
             name: contact.name,
             email: contact.email,
             phone: contact.phone,
+            website: contact.website, // Include the website field
             description: contact.description,
             timescale: contact.timescale,
           },
@@ -78,6 +79,7 @@ function HeroSection() {
           name: "",
           email: "",
           phone: "",
+          website: "", // Reset the website field
           description: "",
           timescale: "",
         });

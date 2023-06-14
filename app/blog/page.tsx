@@ -32,7 +32,6 @@ function BlogPage() {
       {posts && (
         <div>
           <h1 className="text-dark text-3xl font-extrabold sm:text-4xl">Latest blog posts</h1>
-          <EmailSubscribe />
         </div>
       )}
       {posts && (
