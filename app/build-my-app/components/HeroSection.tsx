@@ -14,6 +14,7 @@ interface Contact {
   phone: string;
   description: string;
   timescale: string;
+  website: string;
 }
 
 function HeroSection() {
@@ -28,6 +29,7 @@ function HeroSection() {
     phone: "",
     description: "",
     timescale: "",
+    website: "",
   });
 
   const formRef = useRef<HTMLDivElement>(null);
@@ -51,43 +53,45 @@ function HeroSection() {
     setStep(5);
   };  
   
-  const handleContactSubmission = async (e: FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    try {
-      const { data, error } = await supabase
-        .from('leads')
-        .insert([
-          {
-            type: type,
-            service: service,
-            feature: feature,
-            name: contact.name,
-            email: contact.email,
-            phone: contact.phone,
-            website: contact.website, // Include the website field
-            description: contact.description,
-            timescale: contact.timescale,
-          },
-        ]);
-  
-      if (error) {
-        console.error('Error inserting data: ', error);
-      } else {
-        console.log('Data inserted successfully');
-        setStep(1);
-        setContact({
-          name: "",
-          email: "",
-          phone: "",
-          website: "", // Reset the website field
-          description: "",
-          timescale: "",
-        });
-      }
-    } catch (error) {
+// ...
+
+const handleContactSubmission = async (e: FormEvent<HTMLFormElement>) => {
+  e.preventDefault();
+  try {
+    const { data, error } = await supabase
+      .from('leads')
+      .insert([
+        {
+          type: type,
+          service: service,
+          feature: feature,
+          name: contact.name,
+          email: contact.email,
+          phone: contact.phone,
+          website: contact.website,
+          description: contact.description,
+          timescale: contact.timescale,
+        },
+      ]);
+
+    if (error) {
       console.error('Error inserting data: ', error);
+    } else {
+      console.log('Data inserted successfully');
+      setStep(1);
+      setContact({
+        name: "",
+        email: "",
+        phone: "",
+        website: "",
+        description: "",
+        timescale: "",
+      });
     }
-  };  
+  } catch (error) {
+    console.error('Error inserting data: ', error);
+  }
+  };
 
   const handleGetQuoteClick = () => {
     setShowImage(false);
