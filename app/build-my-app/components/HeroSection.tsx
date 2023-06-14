@@ -23,6 +23,8 @@ function HeroSection() {
   const [type, setType] = useState(""); // Mobile / Website
   const [service, setService] = useState(""); // UX Design / Development / Both
   const [feature, setFeature] = useState(""); // Existing website / website address
+  const [hasExistingWebsite, setHasExistingWebsite] = useState(false);
+  const [websiteAddress, setWebsiteAddress] = useState("");
   const [contact, setContact] = useState<Contact>({
     name: "",
     email: "",
@@ -44,55 +46,57 @@ function HeroSection() {
     setStep(3);
   };
 
-  const handleFeatureSelection = (selectedFeature: string) => {
+  const handleFeatureSelection = (selectedFeature: string, hasExistingWebsite: boolean, websiteAddress: string) => {
     setFeature(selectedFeature);
+    setHasExistingWebsite(hasExistingWebsite);
+    setWebsiteAddress(websiteAddress);
     setStep(4);
   };
 
   const handleProjectTimeline = () => {
     setStep(5);
-  };  
-  
-// ...
-
-const handleContactSubmission = async (e: FormEvent<HTMLFormElement>) => {
-  e.preventDefault();
-  try {
-    const { data, error } = await supabase
-      .from('leads')
-      .insert([
-        {
-          type: type,
-          service: service,
-          feature: feature,
-          name: contact.name,
-          email: contact.email,
-          phone: contact.phone,
-          website: contact.website,
-          description: contact.description,
-          timescale: contact.timescale,
-        },
-      ]);
-
-    if (error) {
-      console.error('Error inserting data: ', error);
-    } else {
-      console.log('Data inserted successfully');
-      setStep(1);
-      setContact({
-        name: "",
-        email: "",
-        phone: "",
-        website: "",
-        description: "",
-        timescale: "",
-      });
-    }
-  } catch (error) {
-    console.error('Error inserting data: ', error);
-  }
   };
 
+  const handleContactSubmission = async (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    try {
+      const { data, error } = await supabase
+        .from("leads")
+        .insert([
+          {
+            type: type,
+            service: service,
+            feature: feature,
+            name: contact.name,
+            email: contact.email,
+            phone: contact.phone,
+            website: hasExistingWebsite ? websiteAddress : "", // Check if hasExistingWebsite is true, then include the website address
+            description: contact.description,
+            timescale: contact.timescale,
+          },
+        ]);
+
+      if (error) {
+        console.error("Error inserting data: ", error);
+      } else {
+        console.log("Data inserted successfully");
+        setStep(1);
+        setContact({
+          name: "",
+          email: "",
+          phone: "",
+          website: "",
+          description: "",
+          timescale: "",
+        });
+        setHasExistingWebsite(false);
+        setWebsiteAddress("");
+      }
+    } catch (error) {
+      console.error("Error inserting data: ", error);
+    }
+  };
+  
   const handleGetQuoteClick = () => {
     setShowImage(false);
     setStep(1);
