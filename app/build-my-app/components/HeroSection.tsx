@@ -136,7 +136,7 @@ function HeroSection() {
               )}
 
               {step === 3 && (
-                <WebsiteSelection handleFeatureSelection={handleWebsiteSelection} />
+                <WebsiteSelection handleWebsiteSelection={handleWebsiteSelection} />
               )}
 
               {step === 4 && (
