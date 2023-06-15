@@ -1,9 +1,17 @@
 import Image from 'next/image';
-import { useState, ChangeEvent } from 'react';
+import { useState, ChangeEvent, SetStateAction, Dispatch } from 'react';
+
+interface Contact {
+  name: string;
+  email: string;
+  phone: string;
+  description: string;
+  timescale: string;
+}
 
 interface ProjectTimelineProps {
   contact: Contact;
-  setContact: (contact: Contact) => void;
+  setContact: Dispatch<SetStateAction<Contact>>; // Update the type of setContact
   handleProjectTimeline: () => void;
   setFeature: (feature: string) => void;
 }

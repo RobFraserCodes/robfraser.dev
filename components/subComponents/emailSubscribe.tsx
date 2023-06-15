@@ -3,7 +3,6 @@ import React from 'react'
 function EmailSubscribe() {
   return (
     <div className="space-y-5 sm:text-center sm:max-w-md sm:mx-auto">
-        <h1 className="text-dark text-3xl font-extrabold sm:text-4xl">Latest blog posts</h1>
         <p className="text-dark">Stay updated on the latest news.</p>
         <form onSubmit={(e) => e.preventDefault()} className="items-center justify-center gap-3 sm:flex">
         <div className="relative">

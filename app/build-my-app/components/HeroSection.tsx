@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useRef, ChangeEvent, FormEvent } from 'react';
+import React, { useState, useRef, FormEvent } from 'react';
 import supabase from '@/lib/supabaseClient';
 import TypeSelection from './TypeSelection';
 import ServiceSelection from './ServiceSelection';
@@ -14,6 +14,7 @@ interface Contact {
   phone: string;
   description: string;
   timescale: string;
+  website: string;
 }
 
 function HeroSection() {
@@ -22,14 +23,16 @@ function HeroSection() {
   const [type, setType] = useState(""); // Mobile / Website
   const [service, setService] = useState(""); // UX Design / Development / Both
   const [feature, setFeature] = useState(""); // Existing website / website address
-  const [timeline, setTimeline] = useState("");
+  const [hasExistingWebsite, setHasExistingWebsite] = useState(false);
+  const [websiteAddress, setWebsiteAddress] = useState("");
   const [contact, setContact] = useState<Contact>({
     name: "",
     email: "",
     phone: "",
     description: "",
     timescale: "",
-  });
+    website: "",
+  }) as [Contact, React.Dispatch<React.SetStateAction<Contact>>];  
 
   const formRef = useRef<HTMLDivElement>(null);
 
@@ -43,20 +46,22 @@ function HeroSection() {
     setStep(3);
   };
 
-  const handleFeatureSelection = (selectedFeature: string) => {
+  const handleFeatureSelection = (selectedFeature: string, hasExistingWebsite: boolean, websiteAddress: string) => {
     setFeature(selectedFeature);
+    setHasExistingWebsite(hasExistingWebsite);
+    setWebsiteAddress(websiteAddress);
     setStep(4);
   };
 
   const handleProjectTimeline = () => {
     setStep(5);
-  };    
+  };
   
   const handleContactSubmission = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     try {
       const { data, error } = await supabase
-        .from('leads')
+        .from("leads")
         .insert([
           {
             type: type,
@@ -65,28 +70,32 @@ function HeroSection() {
             name: contact.name,
             email: contact.email,
             phone: contact.phone,
+            website: hasExistingWebsite ? websiteAddress : "", // Check if hasExistingWebsite is true, then include the website address
             description: contact.description,
             timescale: contact.timescale,
           },
         ]);
-  
+
       if (error) {
-        console.error('Error inserting data: ', error);
+        console.error("Error inserting data: ", error);
       } else {
-        console.log('Data inserted successfully');
+        console.log("Data inserted successfully");
         setStep(1);
         setContact({
           name: "",
           email: "",
           phone: "",
+          website: "",
           description: "",
           timescale: "",
         });
+        setHasExistingWebsite(false);
+        setWebsiteAddress("");
       }
     } catch (error) {
-      console.error('Error inserting data: ', error);
+      console.error("Error inserting data: ", error);
     }
-  };  
+  };
 
   const handleGetQuoteClick = () => {
     setShowImage(false);
