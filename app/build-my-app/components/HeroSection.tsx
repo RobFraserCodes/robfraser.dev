@@ -4,7 +4,7 @@ import React, { useState, useRef, FormEvent } from 'react';
 import supabase from '@/lib/supabaseClient';
 import TypeSelection from './TypeSelection';
 import ServiceSelection from './ServiceSelection';
-import FeatureSelection from './FeatureSelection';
+import WebsiteSelection from './WebsiteSelection';
 import ProjectTimeline from './ProjectTimeline';
 import ContactForm from './ContactForm';
 
@@ -12,9 +12,6 @@ interface Contact {
   name: string;
   email: string;
   phone: string;
-  description: string;
-  timescale: string;
-  website: string;
 }
 
 function HeroSection() {
@@ -22,16 +19,14 @@ function HeroSection() {
   const [showImage, setShowImage] = useState(true);
   const [type, setType] = useState(""); // Mobile / Website
   const [service, setService] = useState(""); // UX Design / Development / Both
-  const [feature, setFeature] = useState(""); // Existing website / website address
-  const [hasExistingWebsite, setHasExistingWebsite] = useState(false);
-  const [websiteAddress, setWebsiteAddress] = useState("");
+  const [hasExistingWebsite, setHasExistingWebsite] = useState(false); // existing website
+  const [websiteAddress, setWebsiteAddress] = useState(""); // existing website address
+  const [description, setDescription] = useState(""); // description of customer project
+  const [timeline, setTimeline] = useState(""); // timeline of customer project
   const [contact, setContact] = useState<Contact>({
     name: "",
     email: "",
     phone: "",
-    description: "",
-    timescale: "",
-    website: "",
   }) as [Contact, React.Dispatch<React.SetStateAction<Contact>>];  
 
   const formRef = useRef<HTMLDivElement>(null);
@@ -46,14 +41,15 @@ function HeroSection() {
     setStep(3);
   };
 
-  const handleFeatureSelection = (selectedFeature: string, hasExistingWebsite: boolean, websiteAddress: string) => {
-    setFeature(selectedFeature);
+  const handleWebsiteSelection = (hasExistingWebsite: boolean, websiteAddress: string) => {
     setHasExistingWebsite(hasExistingWebsite);
     setWebsiteAddress(websiteAddress);
     setStep(4);
   };
 
-  const handleProjectTimeline = () => {
+  const handleProjectTimeline = (description: string, timeline: string) => {
+    setTimeline(timeline);
+    setDescription(description);
     setStep(5);
   };
 
@@ -66,13 +62,14 @@ function HeroSection() {
           {
             type: type,
             service: service,
-            feature: feature,
+            website: hasExistingWebsite ? websiteAddress: "",
+            description: description,
+            timescale: timeline,
+            contact: {
             name: contact.name,
             email: contact.email,
             phone: contact.phone,
-            website: hasExistingWebsite ? websiteAddress : "", // Check if hasExistingWebsite is true, then include the website address
-            description: contact.description,
-            timescale: contact.timescale,
+            }
           },
         ]);
 
@@ -81,16 +78,6 @@ function HeroSection() {
       } else {
         console.log("Data inserted successfully");
         setStep(1);
-        setContact({
-          name: "",
-          email: "",
-          phone: "",
-          website: "",
-          description: "",
-          timescale: "",
-        });
-        setHasExistingWebsite(false);
-        setWebsiteAddress("");
       }
     } catch (error) {
       console.error("Error inserting data: ", error);
@@ -149,16 +136,11 @@ function HeroSection() {
               )}
 
               {step === 3 && (
-                <FeatureSelection handleFeatureSelection={handleFeatureSelection} />
+                <WebsiteSelection handleFeatureSelection={handleWebsiteSelection} />
               )}
 
               {step === 4 && (
-                <ProjectTimeline
-                  contact={contact}
-                  setContact={setContact}
-                  handleProjectTimeline={handleProjectTimeline}
-                  setFeature={setFeature}
-                />
+                <ProjectTimeline handleProjectTimeline={handleProjectTimeline} />
               )}
 
               {step === 5 && (
