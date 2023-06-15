@@ -2,24 +2,25 @@ import Image from 'next/image';
 import { useState, ChangeEvent } from 'react';
 
 interface ProjectTimelineProps {
-  handleProjectTimeline: () => void;
-  description: string;
-  timescale: string;
+  handleProjectTimeline: (description: string, timeline: string) => void;
 }
 
 function ProjectTimeline({ handleProjectTimeline }: ProjectTimelineProps) {
-  const [selectedTimeline, setSelectedTimeline] = useState("");
+  const [timeline, setTimeline] = useState("");
+  const [description, setDescription] = useState("");
 
   const handleDescriptionChange = (event: ChangeEvent<HTMLTextAreaElement>) => {
     const description = event.target.value;
+    setDescription(description);
   };
 
   const handleTimelineChange = (event: ChangeEvent<HTMLSelectElement>) => {
     const timescale = event.target.value;
+    setTimeline(timescale);
   };
 
   const handleProjectTimelineClick = () => {
-    handleProjectTimeline();
+    handleProjectTimeline(description, timeline);
   };
 
   return (
@@ -40,7 +41,7 @@ function ProjectTimeline({ handleProjectTimeline }: ProjectTimelineProps) {
         <select
           id="timeline"
           className="border border-gray/20 mb-14 w-full p-3 rounded border-gray-300 focus:outline-none focus:ring-primary focus:border-primary"
-          value={timescale}
+          value={timeline}
           onChange={handleTimelineChange}
         >
           <option value="">Select a timeline</option>

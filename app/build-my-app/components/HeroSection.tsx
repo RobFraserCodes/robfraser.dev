@@ -27,7 +27,7 @@ function HeroSection() {
     name: "",
     email: "",
     phone: "",
-  }) as [Contact, React.Dispatch<React.SetStateAction<Contact>>];  
+  });
 
   const formRef = useRef<HTMLDivElement>(null);
 
@@ -62,14 +62,14 @@ function HeroSection() {
           {
             type: type,
             service: service,
-            website: hasExistingWebsite ? websiteAddress: "",
+            website: hasExistingWebsite ? websiteAddress : "",
             description: description,
             timescale: timeline,
             contact: {
-            name: contact.name,
-            email: contact.email,
-            phone: contact.phone,
-            }
+              name: contact.name,
+              email: contact.email,
+              phone: contact.phone,
+            },
           },
         ]);
 
@@ -93,7 +93,7 @@ function HeroSection() {
   return (
     <section className="bg-off-white dark:bg-dark">
       <div className="max-w-screen-xl mx-auto px-4 py-28 gap-12 text-gray-600 md:px-8">
-        <div className={`space-y-5 max-w-4xl mx-auto text-center ${showImage ? 'show' : 'hide'}`}>
+      <div className={`space-y-5 max-w-4xl mx-auto text-center ${showImage ? 'show' : 'hide'}`}>
           <h1 className="text-sm dark:text-white font-medium">
             Custom built websites and apps
           </h1>
@@ -140,7 +140,9 @@ function HeroSection() {
               )}
 
               {step === 4 && (
-                <ProjectTimeline handleProjectTimeline={handleProjectTimeline} />
+                <ProjectTimeline
+                  handleProjectTimeline={handleProjectTimeline}
+                />
               )}
 
               {step === 5 && (
