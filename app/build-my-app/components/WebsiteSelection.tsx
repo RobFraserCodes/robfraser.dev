@@ -21,13 +21,13 @@ function WebsiteSelection({ handleWebsiteSelection }: WebsiteSelectionProps) {
   };
 
   return (
-    <div className="flex flex-col-reverse md:flex-row mx-8">
+    <div className="flex flex-col-reverse md:flex-row mx-8 text-black mb-20">
       <div className="md:w-1/3 flex flex-col md:flex-row justify-around mx-auto pt-20">
-        <Image src={coding} width={300} alt='A man coding.' />
+        <Image src={coding} width={300} height={300} alt='A man coding.' />
       </div>
       <div className="md:w-2/3 flex flex-col">
         <div className="mb-8">
-          <label htmlFor="websiteOption" className="text-gray/50 pb-2">
+          <label htmlFor="websiteOption" className="text-gray/50 pb-4">
             Do you have an existing website?
           </label>
           <select
@@ -65,4 +65,4 @@ function WebsiteSelection({ handleWebsiteSelection }: WebsiteSelectionProps) {
   );
 }
 
-export default FeatureSelection;
+export default WebsiteSelection;

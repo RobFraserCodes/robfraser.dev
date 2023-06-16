@@ -22,7 +22,7 @@ function ContactForm({
   };
 
   return (
-    <div className="dark:text-white min-h-screen">
+    <div className="min-h-screen text-black">
       <h3 className="mb-12">Contact Details</h3>
       <div className="flex flex-col-reverse md:flex-row">
         <div className="justify-center items-center mt-20 md:mt-0 mx-auto">

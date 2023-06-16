@@ -24,7 +24,7 @@ function ProjectTimeline({ handleProjectTimeline }: ProjectTimelineProps) {
   };
 
   return (
-    <div className='flex flex-col-reverse md:flex-row justify-center items-center gap-x-0 md:gap-x-8 gap-y-8 md:gap-y-0'>
+    <div className='flex flex-col-reverse md:flex-row justify-center items-center gap-x-0 md:gap-x-8 gap-y-8 md:gap-y-0 text-black'>
       <div className='hidden md:block shadow-sm rounded-md'>
         <Image src="/tablet.png" alt="Mockup of a desktop website" width={500} height={500} />
       </div>
