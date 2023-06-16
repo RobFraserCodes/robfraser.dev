@@ -28,6 +28,7 @@ function HeroSection() {
     email: "",
     phone: "",
   });
+  const [success, setSuccess] = useState(false); // success state of contact form submission
 
   const formRef = useRef<HTMLDivElement>(null);
 
@@ -78,7 +79,7 @@ function HeroSection() {
         console.error("Error inserting data: ", error);
       } else {
         console.log("Data inserted successfully");
-        setStep(1);
+        setSuccess(true);
       }
     } catch (error) {
       console.error("Error inserting data: ", error);
@@ -93,6 +94,14 @@ function HeroSection() {
 
   return (
     <section className="bg-off-white dark:bg-dark dark:text-white">
+      {isSubmitted ? (
+      // Render the success page
+      <div className="max-w-screen-xl mx-auto px-4 py-28 gap-12 text-gray-600 md:px-8">
+        <h1>Thank you for your submission!</h1>
+        {/* Add any additional content or components for the success page */}
+      </div>
+    ) : (
+      // Render the form steps
       <div className="max-w-screen-xl mx-auto px-4 py-28 gap-12 text-gray-600 md:px-8">
       <div className={`space-y-5 max-w-4xl mx-auto text-center ${showImage ? 'show' : 'hide'}`}>
           <h1 className="text-sm font-medium">
@@ -154,6 +163,8 @@ function HeroSection() {
           )}
         </div>
       </div>
+      </div>
+    )}
     </section>
   );
 }
