@@ -1,37 +1,26 @@
 import Image from 'next/image';
-import { useState, ChangeEvent, SetStateAction, Dispatch } from 'react';
-
-interface Contact {
-  name: string;
-  email: string;
-  phone: string;
-  description: string;
-  timescale: string;
-}
+import { useState, ChangeEvent } from 'react';
 
 interface ProjectTimelineProps {
-  contact: Contact;
-  setContact: Dispatch<SetStateAction<Contact>>; // Update the type of setContact
-  handleProjectTimeline: () => void;
-  setFeature: (feature: string) => void;
+  handleProjectTimeline: (description: string, timeline: string) => void;
 }
 
-function ProjectTimeline({ contact, setContact, handleProjectTimeline, setFeature }: ProjectTimelineProps) {
-  const [selectedTimeline, setSelectedTimeline] = useState("");
+function ProjectTimeline({ handleProjectTimeline }: ProjectTimelineProps) {
+  const [timeline, setTimeline] = useState("");
+  const [description, setDescription] = useState("");
 
   const handleDescriptionChange = (event: ChangeEvent<HTMLTextAreaElement>) => {
     const description = event.target.value;
-    setContact({ ...contact, description });
+    setDescription(description);
   };
 
   const handleTimelineChange = (event: ChangeEvent<HTMLSelectElement>) => {
     const timescale = event.target.value;
-    setContact({ ...contact, timescale });
+    setTimeline(timescale);
   };
 
   const handleProjectTimelineClick = () => {
-    setFeature(selectedTimeline);
-    handleProjectTimeline();
+    handleProjectTimeline(description, timeline);
   };
 
   return (
@@ -45,14 +34,14 @@ function ProjectTimeline({ contact, setContact, handleProjectTimeline, setFeatur
           id="projectDescription"
           className="border border-gray/20 w-full p-3 rounded border-gray-300 focus:outline-none focus:ring-primary focus:border-primary"
           placeholder="Please write a short description of your project"
-          value={contact.description}
+          value={description}
           onChange={handleDescriptionChange}
         ></textarea>
         <label htmlFor="timeline" className='text-gray/50 pb-2'>When do you need the project?</label>
         <select
           id="timeline"
           className="border border-gray/20 mb-14 w-full p-3 rounded border-gray-300 focus:outline-none focus:ring-primary focus:border-primary"
-          value={contact.timescale}
+          value={timeline}
           onChange={handleTimelineChange}
         >
           <option value="">Select a timeline</option>

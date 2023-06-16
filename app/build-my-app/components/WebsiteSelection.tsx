@@ -2,19 +2,13 @@ import { useState } from 'react';
 import Image from 'next/image';
 import coding from '/public/coding.png';
 
-interface FeatureSelectionProps {
-  handleFeatureSelection: (feature: string, hasExistingWebsite: boolean, websiteAddress: string) => void;
+interface WebsiteSelectionProps {
+  handleWebsiteSelection: (hasExistingWebsite: boolean, websiteAddress: string) => void;
 }
 
-function FeatureSelection({ handleFeatureSelection }: FeatureSelectionProps) {
-  const [selectedFeature, setSelectedFeature] = useState('');
+function WebsiteSelection({ handleWebsiteSelection }: WebsiteSelectionProps) {
   const [hasExistingWebsite, setHasExistingWebsite] = useState(false);
   const [websiteAddress, setWebsiteAddress] = useState('');
-
-  const handleSelection = (feature: string) => {
-    setSelectedFeature(feature);
-    handleFeatureSelection(feature, hasExistingWebsite, websiteAddress);
-  };
 
   const handleWebsiteOptionChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
     const option = event.target.value;
@@ -22,14 +16,14 @@ function FeatureSelection({ handleFeatureSelection }: FeatureSelectionProps) {
   };
 
   const handleWebsiteAddressChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const address = event.target.value;
-    setWebsiteAddress(address);
+    const websiteAddress = event.target.value;
+    setWebsiteAddress(websiteAddress);
   };
 
   return (
     <div className="flex flex-col-reverse md:flex-row mx-8">
       <div className="md:w-1/3 flex flex-col md:flex-row justify-around mx-auto pt-20">
-        <Image src={coding} width={300} height={300} alt='3D image of a man coding at his desk.' />
+        <Image src={coding} width={300} alt='A man coding.' />
       </div>
       <div className="md:w-2/3 flex flex-col">
         <div className="mb-8">
@@ -61,7 +55,7 @@ function FeatureSelection({ handleFeatureSelection }: FeatureSelectionProps) {
           </div>
         )}
         <button
-          onClick={() => handleFeatureSelection(selectedFeature, hasExistingWebsite, websiteAddress)}
+          onClick={() => handleWebsiteSelection( hasExistingWebsite, websiteAddress)}
           className="block w-full p-3 rounded bg-primary text-white font-semibold focus:outline-none"
         >
           Next
