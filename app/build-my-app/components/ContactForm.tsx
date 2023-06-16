@@ -26,7 +26,7 @@ function ContactForm({
       <h3 className="mb-12">Contact Details</h3>
       <div className="flex flex-col-reverse md:flex-row">
         <div className="justify-center items-center mt-20 md:mt-0 mx-auto">
-          <Image src={coding} width={300} height={300} alt="Image of a person coding" />
+          <Image src={coding} width={300} alt="Image of a person coding" />
         </div>
         <form onSubmit={handleContactSubmission} className="space-y-4 flex-1 mx-8">
           <input
