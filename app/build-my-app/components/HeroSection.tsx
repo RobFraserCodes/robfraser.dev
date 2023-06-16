@@ -55,6 +55,7 @@ function HeroSection() {
 
   const handleContactSubmission = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    console.log("Submitting contact form");
     try {
       const { data, error } = await supabase
         .from("leads")
@@ -98,7 +99,7 @@ function HeroSection() {
             Custom built websites and apps
           </h1>
           <h2 className="text-4xl dark:text-white font-extrabold mx-auto md:text-5xl">
-            Elevate your business with
+            Elevate your business with &nbsp;
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#4F46E5] to-[#E114E5]">
               Professional Design and Development.
             </span>
