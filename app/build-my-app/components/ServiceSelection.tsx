@@ -19,7 +19,7 @@ function ServiceSelection({ handleServiceSelection }: ServiceSelectionProps) {
   };
 
   return (
-    <div className="min-h-screen">
+    <div className="">
       <h3 className="mb-14 dark:text-white">What type of service do you need?</h3>
       <div className="flex flex-col md:flex-row justify-around items-center">
         <div className="text-center shadow-md p-4 mx-4 dark:bg-off-white rounded-md">

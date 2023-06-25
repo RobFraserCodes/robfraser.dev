@@ -8,7 +8,7 @@
   }
 
   h1 {
-    @apply text-5xl font-extrabold uppercase text-center;
+    @apply text-6xl font-extrabold uppercase text-center;
   }
 
   h2 {
