@@ -40,10 +40,10 @@ const Hero = () => {
     setIsHovered(false);
   };
 
-  const handleMouseMove = (event) => {
+  const handleMouseMove = (event: React.MouseEvent) => {
     const { clientX, clientY } = event;
     setMousePosition({ x: clientX, y: clientY });
-  };
+  };  
 
   return (
     <div className="relative bg-off-white dark:bg-dark">
