@@ -4,7 +4,7 @@ import Image from 'next/image';
 interface CardProps {
   title: string;
   description: string;
-  imageSrc: StaticImageData;
+  imageSrc: string;
   selected: boolean;
   onClick: () => void;
 }
