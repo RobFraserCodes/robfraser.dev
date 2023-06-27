@@ -17,6 +17,7 @@ interface Contact {
 
 function HeroSection() {
   const [step, setStep] = useState(1);
+  const [previousStep, setPreviousStep] = useState(0);
   const [showImage, setShowImage] = useState(true);
   const [type, setType] = useState(""); // Mobile / Website
   const [service, setService] = useState(""); // UX Design / Development / Both
@@ -35,23 +36,27 @@ function HeroSection() {
 
   const handleTypeSelection = (selectedType: string) => {
     setType(selectedType);
+    setPreviousStep(step);
     setStep(2);
   };
 
   const handleServiceSelection = (selectedService: string) => {
     setService(selectedService);
+    setPreviousStep(step);
     setStep(3);
   };
 
   const handleWebsiteSelection = (hasExistingWebsite: boolean, websiteAddress: string) => {
     setHasExistingWebsite(hasExistingWebsite);
     setWebsiteAddress(websiteAddress);
+    setPreviousStep(step);
     setStep(4);
   };
 
   const handleProjectTimeline = (description: string, timeline: string) => {
     setTimeline(timeline);
     setDescription(description);
+    setPreviousStep(step);
     setStep(5);
   };
 
@@ -88,9 +93,12 @@ function HeroSection() {
   };
 
   const handleGetQuoteClick = () => {
-    setShowImage(false);
-    setStep(1);
-    formRef.current?.scrollIntoView({ behavior: 'smooth' });
+    if (step > 1) {
+      setStep(previousStep);
+    } else {
+      setShowImage(false);
+      setStep(1);
+    }
   };
 
   return (
@@ -119,11 +127,15 @@ function HeroSection() {
             <a
               onClick={handleGetQuoteClick}
               className="block p-3 text-white font-medium bg-secondary duration-150 hover:bg-secondary-dark rounded text-center shadow-lg hover:cursor-pointer"
-            >Start</a>
+            >
+              {step > 1 ? "Go Back" : "Start"}
+            </a>
             <a
               href="/login"
               className="block p-3 hover:text-gray font-medium duration-150 active:bg-gray/50 border rounded text-center"
-            >Retrieve saved quote</a>
+            >
+              Retrieve saved quote
+            </a>
           </div>
           <div ref={formRef} className="mt-14">
             {showImage ? (

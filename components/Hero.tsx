@@ -4,29 +4,8 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import SocialIcons from './subComponents/socialIcons';
 import Image from 'next/image';
-import profile from '../public/profile.png';
+import profile from '/public/profile.png';
 import Skew from './subComponents/skew';
-
-const ExplodingShape = ({ x, y }: { x: number; y: number }) => {
-  const [isExploded, setIsExploded] = useState(false);
-
-  const handleClick = () => {
-    setIsExploded(true);
-  };
-
-  return (
-    <motion.div
-      className="w-16 h-16 bg-red-500 rounded-full"
-      style={{
-        x: isExploded ? x : 0,
-        y: isExploded ? y : 0,
-        scale: isExploded ? 0 : 1,
-        opacity: isExploded ? 0 : 1,
-      }}
-      onClick={handleClick}
-    ></motion.div>
-  );
-};
 
 const Hero = () => {
   const [isHovered, setIsHovered] = useState(false);
@@ -43,7 +22,7 @@ const Hero = () => {
   const handleMouseMove = (event: React.MouseEvent) => {
     const { clientX, clientY } = event;
     setMousePosition({ x: clientX, y: clientY });
-  };  
+  };
 
   return (
     <div className="relative bg-off-white dark:bg-dark">
@@ -73,14 +52,6 @@ const Hero = () => {
               <div className="absolute w-112 h-112 overflow-hidden rounded-full">
                 <Image src={profile} alt="Rob Fraser, UX Developer 3D portrait" />
               </div>
-              {isHovered && (
-                <motion.div className="absolute inset-0 flex justify-center items-center">
-                  {/* Add your exploding shapes here */}
-                  <ExplodingShape x={mousePosition.x} y={mousePosition.y} />
-                  <ExplodingShape x={mousePosition.x} y={mousePosition.y} />
-                  <ExplodingShape x={mousePosition.x} y={mousePosition.y} />
-                </motion.div>
-              )}
             </motion.div>
           </div>
         </div>
