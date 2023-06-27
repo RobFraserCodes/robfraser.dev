@@ -7,7 +7,7 @@ import Image from 'next/image';
 import profile from '../public/profile.png';
 import Skew from './subComponents/skew';
 
-const ExplodingShape = ({ x, y }) => {
+const ExplodingShape = ({ x, y }: { x: number; y: number }) => {
   const [isExploded, setIsExploded] = useState(false);
 
   const handleClick = () => {
