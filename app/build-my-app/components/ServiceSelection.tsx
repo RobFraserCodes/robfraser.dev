@@ -19,35 +19,44 @@ function ServiceSelection({ handleServiceSelection }: ServiceSelectionProps) {
   };
 
   return (
-    <div className="">
+    <div>
       <h3 className="mb-14 dark:text-white">What type of service do you need?</h3>
       <div className="flex flex-col md:flex-row justify-around items-center">
-        <div className="text-center shadow-md p-4 mx-4 dark:bg-off-white rounded-md">
-          <Image src={uxDesign} width={300} alt="Image of a pencil" />
-          <button
-            className="mt-2 block w-full p-3 rounded bg-primary hover:bg-primary-dark text-white font-semibold focus:outline-none"
-            onClick={() => handleSelection('UX Design')}
-          >
+        <div
+          className={`text-center shadow-md p-4 mx-4 rounded-md hover:bg-secondary hover:cursor-pointer ${
+            selectedService === 'UX Design' ? 'bg-secondary' : 'dark:bg-off-white'
+          }`}
+          onClick={() => handleSelection('UX Design')}
+        >
+          <h4 className="font-semibold">
             Design
-          </button>
+          </h4>
+          <p className="text-sm">Brief description of design service</p>
+          <Image src={uxDesign} width={300} alt="Image of a pencil" />
         </div>
-        <div className="text-center shadow-md p-4 m-4 dark:bg-off-white rounded-md">
-          <Image src={coding} width={300} alt="Image of code" />
-          <button
-            className="mt-2 block w-full p-3 rounded bg-primary hover:bg-primary-dark text-white font-semibold focus:outline-none"
-            onClick={() => handleSelection('Development')}
-          >
+        <div
+          className={`text-center shadow-md p-4 m-4 rounded-md hover:bg-secondary hover:cursor-pointer ${
+            selectedService === 'Development' ? 'bg-secondary' : 'dark:bg-off-white'
+          }`}
+          onClick={() => handleSelection('Development')}
+        >
+          <h4 className="font-semibold">
             Development
-          </button>
+          </h4>
+          <p className="text-sm">Brief description of development service</p>
+          <Image src={coding} width={300} alt="Image of code" />
         </div>
-        <div className="text-center shadow-md p-4 m-4 dark:bg-off-white rounded-md">
-          <Image src={discuss} width={300} alt="Image of a chat" />
-          <button
-            className="mt-2 block w-full p-3 rounded bg-primary hover:bg-primary-dark text-white font-semibold focus:outline-none"
-            onClick={() => handleSelection('Both')}
-          >
+        <div
+          className={`text-center shadow-md p-4 m-4 rounded-md hover:bg-secondary hover:cursor-pointer ${
+            selectedService === 'Both' ? 'bg-secondary' : 'dark:bg-off-white'
+          }`}
+          onClick={() => handleSelection('Both')}
+        >
+          <h4 className="font-semibold">
             Both
-          </button>
+          </h4>
+          <p className="text-sm">Brief description of both services</p>
+          <Image src={discuss} width={300} alt="Image of a chat" />
         </div>
       </div>
     </div>
