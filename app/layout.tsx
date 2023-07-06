@@ -1,4 +1,5 @@
 import Footer from '@/components/Footer'
+import GoogleAnalytics from '@/components/Head'
 import './globals.css'
 
 export const metadata = {
@@ -13,6 +14,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className='bg-off-white dark:bg-dark'>
+      <GoogleAnalytics />
       <body className='flex flex-col text-black'>
         {children}
         <Footer />
