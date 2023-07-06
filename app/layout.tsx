@@ -1,7 +1,8 @@
+'use client';
+
 import Footer from '@/components/Footer';
 import Head from 'next/head';
 import Script from 'next/script';
-'use client';
 
 import useEffect from 'react';
 import './globals.css';
@@ -22,7 +23,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <>
       <Head>
-        <script async src="https://www.googletagmanager.com/gtag/js?id=AW-11236894671"></script>
+        <Script async src="https://www.googletagmanager.com/gtag/js?id=AW-11236894671"></Script>
       </Head>
       <body className="flex flex-col text-black">
         {children}
