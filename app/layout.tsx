@@ -7,12 +7,15 @@ export const metadata = {
   description: 'A personal portfolio and blog for Rob Fraser',
 };
 
+import{ Analytics } from '@vercel/analytics/react';
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <>
       <body className="flex flex-col text-black">
         <GoogleAnalytics />
         {children}
+        <Analytics /> 
         <Footer />
       </body>
     </>
