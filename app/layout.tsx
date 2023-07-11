@@ -3,8 +3,7 @@
 import Footer from '@/components/Footer';
 import Head from 'next/head';
 import Script from 'next/script';
-
-import useEffect from 'react';
+import { GoogleAnalytics } from 'nextjs-google-analytics';
 import './globals.css';
 
 export const metadata = {
@@ -13,18 +12,9 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
-  useEffect(() => {
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'AW-11236894671');
-  }, []);
-
   return (
     <>
-      <Head>
-        <Script async src="https://www.googletagmanager.com/gtag/js?id=AW-11236894671"></Script>
-      </Head>
+      <GoogleAnalytics trackPageViews />
       <body className="flex flex-col text-black">
         {children}
         <Footer />
