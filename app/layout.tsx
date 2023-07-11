@@ -1,8 +1,4 @@
-'use client';
-
 import Footer from '@/components/Footer';
-import Head from 'next/head';
-import Script from 'next/script';
 import { GoogleAnalytics } from 'nextjs-google-analytics';
 import './globals.css';
 
