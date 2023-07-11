@@ -10,8 +10,8 @@ export const metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <>
-      <GoogleAnalytics trackPageViews />
       <body className="flex flex-col text-black">
+        <GoogleAnalytics />
         {children}
         <Footer />
       </body>
