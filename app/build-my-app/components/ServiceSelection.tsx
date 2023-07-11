@@ -12,7 +12,7 @@ interface CardProps {
 const Card = ({ title, description, imageSrc, selected, onClick }: CardProps) => {
   return (
     <div
-      className={`flex flex-col items-center justify-center text-center shadow-md p-4 mx-4 mb-8 rounded-md hover:bg-secondary hover:cursor-pointer ${
+      className={`flex flex-col items-center justify-center text-center shadow-md p-4 mx-4 mb-8 rounded-md hover:bg-primary-light dark:hover:bg-secondary hover:cursor-pointer ${
         selected ? 'bg-secondary' : 'dark:bg-black'
       }`}
       onClick={onClick}
