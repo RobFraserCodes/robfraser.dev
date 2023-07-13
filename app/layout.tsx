@@ -15,8 +15,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html>
       <body className="flex flex-col text-black">
         <Script
-          async src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`}
+          async
+          src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`}
         />
+
         <Script strategy="lazyOnload">
           {`
             window.dataLayer = window.dataLayer || [];
@@ -24,9 +26,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               dataLayer.push(arguments);
             }
             gtag('js', new Date());
+
             gtag('config', '${GA_TRACKING_ID}');
           `}
         </Script>
+
         <Navbar />
         {children}
         <Footer />
