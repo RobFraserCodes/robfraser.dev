@@ -29,7 +29,7 @@ function ProjectTimeline({ handleProjectTimeline }: ProjectTimelineProps) {
         <Image src="/tablet.png" alt="Mockup of a desktop website" width={500} height={500} />
       </div>
       <div className='p-8'>
-        <label htmlFor="projectDescription" className='text-gray/50 pb-2'>Project Description</label>
+        <label htmlFor="projectDescription" className='text-gray/50 dark:text-white pb-2 mb-2'>Project Description</label>
         <textarea
           id="projectDescription"
           className="border border-gray/20 w-full p-3 rounded border-gray-300 focus:outline-none focus:ring-primary focus:border-primary"
@@ -37,7 +37,7 @@ function ProjectTimeline({ handleProjectTimeline }: ProjectTimelineProps) {
           value={description}
           onChange={handleDescriptionChange}
         ></textarea>
-        <label htmlFor="timeline" className='text-gray/50 pb-2'>When do you need the project?</label>
+        <label htmlFor="timeline" className='text-gray/50 dark:text-white pb-2'>When do you need the project?</label>
         <select
           id="timeline"
           className="border border-gray/20 mb-14 w-full p-3 rounded border-gray-300 focus:outline-none focus:ring-primary focus:border-primary"

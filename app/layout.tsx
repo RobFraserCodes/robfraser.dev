@@ -1,5 +1,5 @@
 import Footer from '@/components/Footer';
-import { GoogleAnalytics } from 'nextjs-google-analytics';
+import Navbar from '@/components/NavBar';
 import './globals.css';
 
 export const metadata = {
@@ -7,17 +7,15 @@ export const metadata = {
   description: 'A personal portfolio and blog for Rob Fraser',
 };
 
-import{ Analytics } from '@vercel/analytics/react';
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <>
+    <html>
       <body className="flex flex-col text-black">
-        <GoogleAnalytics />
+        <Navbar />
         {children}
-        <Analytics /> 
         <Footer />
       </body>
-    </>
+    </html>
   );
 }

@@ -27,7 +27,7 @@ function WebsiteSelection({ handleWebsiteSelection }: WebsiteSelectionProps) {
       </div>
       <div className="md:w-2/3 flex flex-col">
         <div className="mb-8">
-          <label htmlFor="websiteOption" className="text-gray/50 pb-4">
+          <label htmlFor="websiteOption" className="text-gray/50 dark:text-white pb-4">
             Do you have an existing website?
           </label>
           <select
@@ -42,7 +42,7 @@ function WebsiteSelection({ handleWebsiteSelection }: WebsiteSelectionProps) {
         </div>
         {hasExistingWebsite && (
           <div className="mb-8">
-            <label htmlFor="websiteAddress" className="text-gray/50 pb-2">
+            <label htmlFor="websiteAddress" className="text-gray/50 dark:text-white pb-2">
               Website address
             </label>
             <input

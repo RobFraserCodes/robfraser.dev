@@ -130,12 +130,6 @@ function HeroSection() {
             >
               {step > 1 ? "Go Back" : "Start"}
             </a>
-            <a
-              href="/login"
-              className="block p-3 hover:text-gray font-medium duration-150 active:bg-gray/50 border rounded text-center"
-            >
-              Retrieve saved quote
-            </a>
           </div>
           <div ref={formRef} className="mt-14">
             {showImage ? (
