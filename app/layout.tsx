@@ -15,23 +15,23 @@ const GA_TRACKING_ID = process.env.NEXT_PUBLIC_GA_TRACKING_ID;
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html>
+      <Script
+        async
+        src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`}
+      />
+
+      <Script strategy="lazyOnload">
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag() {
+            dataLayer.push(arguments);
+          }
+          gtag('js', new Date());
+
+          gtag('config', '${GA_TRACKING_ID}');
+        `}
+      </Script>
       <body className="flex flex-col text-black">
-        <Script
-          async
-          src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`}
-        />
-
-        <Script strategy="lazyOnload">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag() {
-              dataLayer.push(arguments);
-            }
-            gtag('js', new Date());
-
-            gtag('config', '${GA_TRACKING_ID}');
-          `}
-        </Script>
 
         <Navbar />
         {children}
