@@ -11,7 +11,7 @@ const portfolio = [
         desc: 'A website to administer the exchange program between Japan and Scotland.',
         image_url: '/portfolio/Japan Exchange.png',
         alt: 'Homepage of the Japan Exchange website.',
-        url: 'http://japan-exchange-website.vercel.app',
+        url: 'http://www.japanjourney.co.uk',
     },   
     {
         title: 'Quiz App Design',
