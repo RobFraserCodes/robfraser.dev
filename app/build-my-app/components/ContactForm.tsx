@@ -23,7 +23,8 @@ function ContactForm({
 
   return (
     <div className="text-black">
-      <h3 className="mb-12 dark:text-white">Contact Details</h3>
+      <h1>Contact Info</h1>
+      <h3 className="mb-12 dark:text-white">We will be in touch soon</h3>
       <div className="flex flex-col-reverse md:flex-row">
         <div className="justify-center items-center mt-20 md:mt-0 mx-auto">
           <Image src={coding} width={300} alt="Image of a person coding" />
@@ -64,6 +65,17 @@ function ContactForm({
           </button>
         </form>
       </div>
+
+      <div className="py-10"></div>
+
+      {/* Banner */}
+    <div className='relative flex flex-col md:flex-row bg-gradient-to-tr from-secondary to-primary-dark rounded-md items-center justify-center p-8'>
+      <div className='z-10'>
+        <h2 className='text-white'>Transforming Goals into Success</h2>
+        <p className='text-white p-8'>Turn your dreams into reality with our dedicated, bespoke services. Let's collaborate to unlock your business's potential and create lasting success.</p>
+      </div>
+      <Image src="/teamwork.png" alt="Working together" width={300} height={400} className='m-16 z-10'/>
+    </div>
     </div>
   );
 }

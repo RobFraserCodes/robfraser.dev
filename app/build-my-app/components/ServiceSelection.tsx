@@ -12,15 +12,16 @@ interface CardProps {
 const Card = ({ title, description, imageSrc, selected, onClick }: CardProps) => {
   return (
     <div
-      className={`flex flex-col items-center justify-center text-center shadow-md p-4 mx-4 mb-8 rounded-md hover:bg-primary-light dark:hover:bg-secondary hover:cursor-pointer ${
+      className={`flex flex-col items-center justify-center text-center shadow-md p-4 mx-4 mb-8 rounded-md hover:text-white hover:bg-primary dark:hover:bg-secondary hover:cursor-pointer ${
         selected ? 'bg-secondary' : 'dark:bg-black'
       }`}
       onClick={onClick}
     >
-      <h4 className="font-semibold">{title}</h4>
-      <p className="text-sm px-8">{description}</p>
-      <div className="w-48 h-48 flex justify-center items-center">
+      <h3 className="font-semibold">{title}</h3>
+      <p className="px-8">{description}</p>
+      <div className="w-48 flex flex-col justify-center items-center">
         <Image src={imageSrc} width={200} height={200} alt={`Image of ${title}`} />
+        <button className='px-4 py-2 mt-4 bg-primary text-white rounded-md font-semibold'>Select Service</button>
       </div>
     </div>
   );
@@ -39,7 +40,7 @@ function ServiceSelection({ handleServiceSelection }: ServiceSelectionProps) {
   };
 
   return (
-    <div className='mb-48'>
+    <div className=''>
       <h3 className="mb-14 dark:text-white">What type of service do you need?</h3>
       <div className="flex flex-col md:flex-row justify-around items-center">
         <Card
@@ -64,6 +65,21 @@ function ServiceSelection({ handleServiceSelection }: ServiceSelectionProps) {
           onClick={() => handleSelection('Both')}
         />
       </div>
+
+      <div className="py-8"></div>
+
+      {/* Banner */}
+      <div className='relative flex flex-col md:flex-row bg-gradient-to-tr from-secondary to-primary-dark rounded-md items-center justify-center'>
+        <div className="absolute top-4 right-10 w-32 h-32 bg-white rounded-full -mt-16 -mr-16 flex items-center justify-center transform -rotate-6">
+          <span className="text-center font-bold text-black">10+ Years Experience</span>
+        </div>
+        <Image src="/discuss.png" alt="Working together" width={300} height={400} className='m-16 z-10'/>
+        <div className='z-10'>
+          <h2 className='text-white'>Working with you</h2>
+          <p className='text-white p-8'>I pride myself on the software I produce but I also love working with customers and learning about your business. Positive communication and involvement from the client is not just preferred, it's required.</p>
+        </div>
+      </div>
+      
     </div>
   );
 }

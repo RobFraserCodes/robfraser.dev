@@ -24,6 +24,7 @@ function ProjectTimeline({ handleProjectTimeline }: ProjectTimelineProps) {
   };
 
   return (
+    <>
     <div className='flex flex-col-reverse md:flex-row justify-center items-center gap-x-0 md:gap-x-8 gap-y-8 md:gap-y-0 text-black'>
       <div className='hidden md:block shadow-sm rounded-md'>
         <Image src="/tablet.png" alt="Mockup of a desktop website" width={500} height={500} />
@@ -54,6 +55,16 @@ function ProjectTimeline({ handleProjectTimeline }: ProjectTimelineProps) {
         </button>
       </div>
     </div>
+    
+        {/* Banner */}
+        <div className='relative flex flex-col md:flex-row bg-gradient-to-tr from-primary to-secondary rounded-md items-center justify-center'>
+        <div className='z-10'>
+          <h2 className='text-white'>Elevating Brands, Empowering Businesses</h2>
+          <p className='text-white p-8'>Elevate your business with bespoke services designed to meet your unique needs. Partner with us for results-driven solutions that set you apart.</p>
+        </div>
+        <Image src="/discuss.png" alt="Working together" width={300} height={400} className='m-16 z-10'/>
+      </div>
+      </>
   );
 }
 

@@ -21,6 +21,7 @@ function WebsiteSelection({ handleWebsiteSelection }: WebsiteSelectionProps) {
   };
 
   return (
+    <>
     <div className="flex flex-col-reverse md:flex-row mx-8 text-black mb-20">
       <div className="md:w-1/3 flex flex-col md:flex-row justify-around mx-auto pt-20">
         <Image src={coding} width={300} height={300} alt='A man coding.' />
@@ -61,7 +62,20 @@ function WebsiteSelection({ handleWebsiteSelection }: WebsiteSelectionProps) {
           Next
         </button>
       </div>
+
     </div>
+    {/* Banner */}
+    <div className='relative flex flex-col md:flex-row bg-gradient-to-tr from-secondary to-primary-dark rounded-md items-center justify-center'>
+      <div className="absolute top-4 right-10 w-32 h-32 bg-white rounded-full -mt-16 -mr-16 flex items-center justify-center transform -rotate-6">
+        <span className="text-center font-bold text-black">Your Dream, Our Mission</span>
+      </div>
+      <div className='z-10'>
+        <h2 className='text-white'>Crafting Ideas into Reality</h2>
+        <p className='text-white p-8'>We transform ideas into successful projects, focusing on creativity, efficiency, and personalized solutions. Join us, and let's craft your success story.</p>
+      </div>
+      <Image src="/discuss.png" alt="Working together" width={300} height={400} className='m-16 z-10'/>
+    </div>
+    </>
   );
 }
 
