@@ -40,7 +40,7 @@ const Hero = () => {
             onMouseLeave={handleMouseLeave}
           >
             <motion.div
-              className={`bg-gradient-to-r from-primary to-primary-dark w-80 h-80 mx-auto absolute -x-10 rounded-full ${
+              className={`bg-gradient-to-r from-primary to-secondary w-80 h-80 mx-auto absolute -x-10 rounded-full ${
                 isHovered ? 'scale-110' : 'scale-100'
               }`}
               whileHover={{ scale: 1.2 }}

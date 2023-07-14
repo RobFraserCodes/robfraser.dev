@@ -70,7 +70,7 @@ function ServiceSelection({ handleServiceSelection }: ServiceSelectionProps) {
 
       {/* Banner */}
       <div className='relative flex flex-col md:flex-row bg-gradient-to-tr from-secondary to-primary-dark rounded-md items-center justify-center'>
-        <div className="absolute top-4 right-10 w-32 h-32 bg-white rounded-full -mt-16 -mr-16 flex items-center justify-center transform -rotate-6">
+        <div className="absolute top-4 right-10 w-32 h-32 bg-white rounded-full -mt-16 -mr-16 flex items-center justify-center transform rotate-6">
           <span className="text-center font-bold text-black">10+ Years Experience</span>
         </div>
         <Image src="/discuss.png" alt="Working together" width={300} height={400} className='m-16 z-10'/>

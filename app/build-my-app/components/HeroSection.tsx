@@ -108,7 +108,7 @@ function HeroSection() {
         <SuccessPage />
       ) : (
         // Render the form steps
-        <div className="max-w-screen-xl mx-auto px-4 py-28 gap-12 text-gray-600 md:px-8 dark:text-white">
+        <div className="max-w-screen-xl mx-auto px-4 py-16 gap-12 text-gray-600 md:px-8 dark:text-white">
           <div className={`space-y-5 max-w-4xl mx-auto text-center ${showImage ? 'show' : 'hide'}`}>
             <h1 className="text-sm font-medium">
               Custom built websites and apps
