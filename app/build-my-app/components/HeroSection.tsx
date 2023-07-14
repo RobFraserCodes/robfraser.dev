@@ -124,12 +124,13 @@ function HeroSection() {
             </p>
           </div>
           <div className="items-center justify-center gap-x-3 space-y-3 sm:flex sm:space-y-0 my-8 mx-12">
+          {showImage || step > 1 ? (
             <a
               onClick={handleGetQuoteClick}
               className="block p-3 text-white font-medium bg-secondary duration-150 hover:bg-secondary-dark rounded text-center shadow-lg hover:cursor-pointer"
             >
-              {step > 1 ? "Go Back" : "Start"}
-            </a>
+              {step > 1 ? "Go Back" : "Get Started"}
+            </a>) : null}
           </div>
           <div ref={formRef} className="mt-14">
             {showImage ? (

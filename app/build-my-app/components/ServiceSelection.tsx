@@ -39,7 +39,7 @@ function ServiceSelection({ handleServiceSelection }: ServiceSelectionProps) {
   };
 
   return (
-    <div>
+    <div className='mb-48'>
       <h3 className="mb-14 dark:text-white">What type of service do you need?</h3>
       <div className="flex flex-col md:flex-row justify-around items-center">
         <Card
