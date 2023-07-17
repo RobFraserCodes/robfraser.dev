@@ -27,21 +27,33 @@ const Hero = () => {
   return (
     <div className="relative bg-off-white dark:bg-dark">
       <section id="hero" className="container flex justify-center mx-auto pb-40">
-        <div className="flex flex-col items-center -top-24 text-black">
-          <h1 className="mt-32 dark:text-white bg-gradient-to-r from-primary-light to-secondary-dark bg-clip-text text-transparent">rob fraser</h1>
-          <h3 className="font-thin dark:text-white">UX Designer and Frontend Developer</h3>
-          <div className="text-center">
-            <SocialIcons />
-          </div>
+        <div className="flex flex-col items-center text-black">
+          <h3 className="font-thin dark:text-white bg-gray/20 px-4 py-2 mt-16 mb-4 rounded-full">UX Designer and Frontend Developer</h3>
+          <h1 className="dark:text-white bg-gradient-to-r from-primary-light to-secondary-dark bg-clip-text text-transparent mb-16">rob fraser</h1>
           <div
             className="relative w-80 h-80 pt-8"
             onMouseMove={handleMouseMove}
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
           >
+            {/* Add interactive circles
+            {[...Array(5)].map((_, i) => (
+              <motion.div
+              key={i}
+              className={`absolute w-20 h-20 bg-primary rounded-full scale-90 hover:scale-110 active:scale-80 transition-all duration-200 ease-in-out`}
+              style={{ top: `${mousePosition.y + i}px`, left: `${mousePosition.x + i}px` }}
+              whileHover={{ scale: 1.2 }}
+              whileTap={{ scale: 0.8 }}
+              />
+            ))} */}
+            <div className='absolute w-60 h-60 bg-primary/40 rounded-full right-48 top-32'></div>
+            <div className='absolute w-36 h-36 bg-secondary/20 rounded-full left-64 top-8'></div>
+            <div className='absolute w-16 h-16 bg-secondary rounded-full left-96 top-36'></div>
+            <div className='absolute bg-primary text-white rounded-full shadow-sm left-64 top-48 z-30 px-4 py-3'>Welcome!</div>
+            <div className='absolute bg-white rounded-full shadow-sm left-64 top-64 z-30 px-4 py-3 text-sm w-48'>Ready to build your own website or app?</div>
             <motion.div
-              className={`bg-gradient-to-r from-primary to-secondary w-80 h-80 mx-auto absolute -x-10 rounded-full ${
-                isHovered ? 'scale-110' : 'scale-100'
+              className={`bg-light w-80 h-80 mx-auto absolute -x-10 rounded-full ${
+                isHovered ? 'scale-110 bg-gradient-to-r from-primary to-secondary' : 'scale-100'
               }`}
               whileHover={{ scale: 1.2 }}
               whileTap={{
@@ -54,6 +66,9 @@ const Hero = () => {
               </div>
             </motion.div>
           </div>
+              <div className="text-center mt-16">
+                <SocialIcons />
+              </div>
         </div>
         <Skew colour="bg-primary-dark" area="bottom" />
       </section>
