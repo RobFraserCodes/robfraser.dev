@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState, useRef, FormEvent } from 'react';
+import Image from 'next/image';
 import supabase from '@/lib/supabaseClient';
 import TypeSelection from './TypeSelection';
 import ServiceSelection from './ServiceSelection';
@@ -33,6 +34,15 @@ function HeroSection() {
   const [success, setSuccess] = useState(false);
 
   const formRef = useRef<HTMLDivElement>(null);
+
+  const handleEmailInput = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setContact({ ...contact, email: e.target.value });
+  };
+
+  const isValidEmail = (email: string) => {
+    var re = /\S+@\S+\.\S+/;
+    return re.test(email);
+  }
 
   const handleTypeSelection = (selectedType: string) => {
     setType(selectedType);
@@ -93,13 +103,19 @@ function HeroSection() {
   };
 
   const handleGetQuoteClick = () => {
-    if (step > 1) {
+    if (!isValidEmail(contact.email)) {
+      alert("Please enter a valid email");
+      return;
+    }
+    
+    if (step > 0) { 
       setStep(previousStep);
-    } else {
+    } else {  
       setShowImage(false);
-      setStep(1);
+      setStep(1);  
     }
   };
+  
 
   return (
     <section className="bg-off-white dark:bg-dark">
@@ -125,17 +141,20 @@ function HeroSection() {
           </div>
           <div className="items-center justify-center gap-x-3 space-y-3 sm:flex sm:space-y-0 my-8 mx-12">
             {showImage || step > 1 ? (
-              <a
-                onClick={handleGetQuoteClick}
-                className="block p-3 text-white font-medium bg-secondary duration-150 hover:bg-secondary-dark rounded text-center shadow-lg hover:cursor-pointer"
-              >
-                {step > 1 ? "Go Back" : "Get Started"}
-              </a>
+              <div className='flex space-x-4'>
+                <input type="email" placeholder="Enter your email to get started" className='px-4 w-96' value={contact.email} onChange={handleEmailInput}/>
+                <a
+                  onClick={handleGetQuoteClick}
+                  className="block p-3 text-white font-medium bg-secondary duration-150 hover:bg-secondary-dark rounded text-center shadow-lg hover:cursor-pointer"
+                >
+                  {step > 1 ? "Go Back" : "Get Started"}
+                </a>
+              </div>
             ) : null}
           </div>
           <div ref={formRef} className="mt-14">
             {showImage ? (
-              <img src="/enquiry/enquiry-step-1.png" alt="Mockup of a desktop website" />
+              <Image src="/enquiry/enquiry-step-1.png" alt="Mockup of a desktop website" width={900} height={600} className='mx-auto'/>
             ) : (
               <div className="space-y-8">
                 {/* Render the step based on the current step */}
