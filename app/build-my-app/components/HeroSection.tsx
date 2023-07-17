@@ -32,7 +32,7 @@ function HeroSection() {
     phone: "",
   });
   const [success, setSuccess] = useState(false);
-
+  const [emailSaved, setEmailSaved] = useState(false);
   const formRef = useRef<HTMLDivElement>(null);
 
   const handleEmailInput = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -102,10 +102,22 @@ function HeroSection() {
     }
   };
 
-  const handleGetQuoteClick = () => {
+  const handleGetQuoteClick = async () => {
     if (!isValidEmail(contact.email)) {
       alert("Please enter a valid email");
       return;
+    }
+    
+    if (!emailSaved) {
+      // Insert the email into the database
+      try {
+        const { error } = await supabase.from('emails').insert([{ email: contact.email }]);
+        if (error) throw error;
+        
+        setEmailSaved(true);
+      } catch (error) {
+        console.error("Error inserting email: ", error);
+      }
     }
     
     if (step > 0) { 
