@@ -2,7 +2,7 @@ import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 
-function SuccessPage() {
+function SuccessContent() {
   return (
     <div className="max-w-screen-xl mx-auto px-4 py-28 gap-12 text-gray-600 md:px-8 dark:text-white flex-col items-center">
       <h1 className="">Thank you</h1>
@@ -35,4 +35,4 @@ function SuccessPage() {
   );
 }
 
-export default SuccessPage;
+export default SuccessContent;

@@ -3,7 +3,9 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import SocialIcons from './subComponents/socialIcons';
+import { SparklesIcon } from '@heroicons/react/24/outline';
 import Image from 'next/image';
+import Link from 'next/link';
 import profile from '/public/profile.png';
 import Skew from './subComponents/skew';
 
@@ -38,9 +40,16 @@ const Hero = () => {
           >
             <div className='absolute w-60 h-60 bg-primary/40 rounded-full right-48 top-32'></div>
             <div className='absolute w-36 h-36 bg-secondary/20 rounded-full left-64 top-8'></div>
-            <div className='absolute w-16 h-16 bg-secondary rounded-full left-96 top-36'></div>
+            <div className='absolute w-16 h-16 bg-primary rounded-full right-96 top-36'></div>
             <div className='absolute bg-primary text-white rounded-full shadow-sm left-64 top-48 z-30 px-4 py-3'>Welcome!</div>
-            <div className='absolute bg-white rounded-full shadow-sm left-64 top-64 z-30 px-4 py-3 text-sm w-48'>Ready to build your own website or app?</div>
+            <Link href="/build-my-app">
+            <div className='absolute left-64 top-64 z-40 flex flex-col lg:flex-row space-x-4'>
+              <div className='w-16 h-16 mt-2 lg:mt-0 rounded-full bg-secondary hover:bg-secondary-dark flex items-center justify-center'>
+                <SparklesIcon className='w-6 h-6 text-white'/>
+              </div>
+              <div className='bg-white rounded-full shadow-sm px-4 py-3 text-sm w-48 hidden md:block'>Ready to build your own website or app?</div>
+            </div>
+            </Link>
             <motion.div
               className={`bg-light w-80 h-80 mx-auto absolute -x-10 rounded-full ${
                 isHovered ? 'scale-110 bg-gradient-to-r from-primary to-secondary' : 'scale-100'

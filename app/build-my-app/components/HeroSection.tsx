@@ -8,7 +8,7 @@ import ServiceSelection from './ServiceSelection';
 import WebsiteSelection from './WebsiteSelection';
 import ProjectTimeline from './ProjectTimeline';
 import ContactForm from './ContactForm';
-import SuccessPage from './SuccessPage';
+import SuccessContent from './SuccessContent';
 
 interface Contact {
   name: string;
@@ -120,12 +120,12 @@ function HeroSection() {
       }
     }
     
-    if (step > 0) { 
-      setStep(previousStep);
-    } else {  
+    if (step === 1 && previousStep === 0) {
       setShowImage(false);
-      setStep(1);  
+    } else if (step > 1) {
+      setStep(previousStep);
     }
+    
   };
   
 
@@ -133,7 +133,7 @@ function HeroSection() {
     <section className="bg-off-white dark:bg-dark">
       {success ? (
         // Render the success page
-        <SuccessPage />
+        <SuccessContent />
       ) : (
         // Render the form steps
         <div className="max-w-screen-xl mx-auto px-4 py-16 gap-12 text-gray-600 md:px-8 dark:text-white">
@@ -152,7 +152,7 @@ function HeroSection() {
             </p>
           </div>
           <div className="items-center justify-center gap-x-3 space-y-3 sm:flex sm:space-y-0 my-8 mx-12">
-            {showImage || step > 1 ? (
+            {step === 1 ? (
               <div className='flex space-x-4'>
                 <input type="email" placeholder="Enter your email to get started" className='px-4 w-96' value={contact.email} onChange={handleEmailInput}/>
                 <a
