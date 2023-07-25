@@ -61,7 +61,7 @@ const Hero = () => {
               }}
             >
               <div className="absolute w-112 h-112 overflow-hidden rounded-full">
-                <Image src={profile} alt="Rob Fraser, UX Developer 3D portrait" />
+                <Image src="/images/photo.png" alt="Rob Fraser, UX Developer 3D portrait" width={400} height={400} />
               </div>
             </motion.div>
           </div>
