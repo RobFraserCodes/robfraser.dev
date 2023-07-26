@@ -30,7 +30,7 @@ const Hero = () => {
     <div className="relative bg-off-white dark:bg-dark">
       <section id="hero" className="container flex justify-center mx-auto pb-40">
         <div className="flex flex-col items-center text-black">
-          <h3 className=" text-primary dark:text-white bg-primary/10 px-4 py-2 mt-16 mb-4 rounded-full">UX Designer and Frontend Developer</h3>
+          <p className="dark:text-white px-4 py-2 mt-16">UX Designer and Frontend Developer</p>
           <h1 className="dark:text-white bg-gradient-to-r from-primary-light to-secondary-dark bg-clip-text text-transparent mb-16">rob fraser</h1>
           <div
             className="relative w-80 h-80 pt-8"
