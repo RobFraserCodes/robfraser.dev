@@ -1,12 +1,19 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
-import logo from '/public/logo.svg';
+import logo from '/public/logo.png';
+import logoDark from '/public/logo-dark.png';
 import { usePathname } from 'next/navigation';
 
 export default function Navbar() {
+    const [darkMode, setDarkMode] = useState(false);
+
+    useEffect(() => {
+      setDarkMode(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches);
+    }, []);
+
   const pathname = usePathname();
   const isOnHomePage = pathname === "/";
 
@@ -26,8 +33,9 @@ export default function Navbar() {
                 <div className="flex items-center justify-between py-3 md:py-5 md:block">
                     <a href="/">
                         <Image
-                            src={logo}
-                            width={200}
+                            src={darkMode ? logoDark : logo}
+                            width={140}
+                            height={40}
                             alt="Rob Fraser UX Developer logo"
                         />
                     </a>
@@ -66,7 +74,7 @@ export default function Navbar() {
                                 </a>
                             </li>
                             <li>
-                                <a href="/build-my-app" className="hidden py-3 px-4 font-medium text-center text-white bg-secondary hover:bg-secondary-dark active:bg-secondary-light active:shadow-none rounded-lg shadow lg:inline uppercase">
+                                <a href="/build-my-app" className="hidden py-3 px-4 font-medium text-center text-white bg-secondary hover:bg-secondary-dark active:bg-secondary-light active:shadow-none rounded-sm shadow lg:inline uppercase">
                                     Build My App
                                 </a>
                             </li>
