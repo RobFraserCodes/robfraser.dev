@@ -141,7 +141,7 @@ function HeroSection() {
             <h1 className="text-sm font-medium">
               Custom built websites and apps
             </h1>
-            <h2 className="text-4xl  font-extrabold mx-auto md:text-5xl">
+            {/* <h2 className="text-4xl  font-extrabold mx-auto md:text-5xl">
               Elevate your business with &nbsp;
               <span className="text-primary">
                 Professional Design and Development.
@@ -149,7 +149,7 @@ function HeroSection() {
             </h2>
             <p className="max-w-2xl mx-auto">
               Creating Exceptional User Experiences with Innovative Design and Modern Technologies.
-            </p>
+            </p> */}
           </div>
           <div className="items-center justify-center gap-x-3 space-y-3 sm:flex sm:space-y-0 my-8 mx-12">
             {step === 1 ? (
