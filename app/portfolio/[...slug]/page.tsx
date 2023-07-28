@@ -9,7 +9,7 @@ export default function Page({ params }: { params: { slug: string } }) {
 
   return (
     <section className='h-screen bg-off-white dark:bg-dark dark:text-white'>
-      <h1>{article?.title}</h1>
+      <h1>coming soon</h1>
     </section>
   )
 }
