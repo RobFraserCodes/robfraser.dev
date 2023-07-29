@@ -4,6 +4,6 @@ export interface PortfolioItem {
     img: string;
     url: string;
     alt: string;
-    link: string;
+    slug: string;
     tags: string[];
 }
