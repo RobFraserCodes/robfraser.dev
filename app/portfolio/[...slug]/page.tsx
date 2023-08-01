@@ -10,14 +10,18 @@ interface Props {
   }
 }
 
-export default function Page({ params }: { params: { slug: string } }) {
-  const portfolioItem = portfolio.find((item) => item.slug === params.slug);
-  console.log({portfolioItem.slug});
+interface PortfolioItemProps {
+  title: string;
+  description: string;
+  image: string;
+  slug: string;
+} 
 
+export default async function Page({ params }: Props) {
+  const res = await fetch(`@/data/portfolio/${params.slug}`);
   return (
     <section className='h-screen bg-off-white dark:bg-dark dark:text-white'>
       <h1>coming soon</h1>
-      {params.slug}
     </section>
   )
 }
