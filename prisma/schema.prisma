@@ -2,13 +2,12 @@
 
 generator client {
   provider = "prisma-client-js"
-  previewFeatures = ["jsonProtocol"]
 }
 
 datasource db {
   provider = "postgresql"
-  url = process.env.local.POSTGRES_PRISMA_URL
-  directUrl = process.env.local.POSTGRES_URL_NON_POOLING
+  url = env("POSTGRES_PRISMA_URL")
+  directUrl = env("POSTGRES_URL_NON_POOLING")
 }
 
 model Post {
