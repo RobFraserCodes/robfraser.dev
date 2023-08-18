@@ -138,7 +138,7 @@ function HeroSection() {
         // Render the form steps
         <div className="max-w-screen-xl mx-auto px-4 py-16 gap-12 text-gray-600 md:px-8 dark:text-white">
           <div className={`space-y-5 max-w-4xl mx-auto text-center ${showImage ? 'show' : 'hide'}`}>
-            <h2 className="">
+            <h2 className="bg-gradient-tr from-primary to-secondar text-transparent bg-clip-text">
               Custom built websites and apps
             </h2>
             {/* <h2 className="text-4xl  font-extrabold mx-auto md:text-5xl">
