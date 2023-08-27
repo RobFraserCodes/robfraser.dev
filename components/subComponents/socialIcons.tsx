@@ -12,6 +12,7 @@ function SocialIcons({ fgColor = '#219EBC' }: Props) {
     github: false,
     medium: false,
     linkedin: false,
+    devto: false,
   });
 
   const handleMouseEnter = (platform: string) => {
@@ -57,6 +58,15 @@ function SocialIcons({ fgColor = '#219EBC' }: Props) {
         onMouseEnter={() => handleMouseEnter('linkedin')}
         onMouseLeave={() => handleMouseLeave('linkedin')}
       />
+      <SocialIcon
+        className="mx-2"
+        url="https://dev.to/robfrasercodes"
+        bgColor="transparent"
+        fgColor={iconHover.devto ? hoverColor : fgColor}
+        onMouseEnter={() => handleMouseEnter('devto')}
+        onMouseLeave={() => handleMouseLeave('devto')}
+      />
+
     </div>
   );
 }
