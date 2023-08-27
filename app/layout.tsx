@@ -32,7 +32,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         `}
       </Script>
       <body className="flex flex-col text-black">
-
         <Navbar />
         {children}
         <Analytics />

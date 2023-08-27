@@ -157,7 +157,7 @@ function HeroSection() {
                 <input type="email" placeholder="Enter your email to get started" className='px-4 w-96' value={contact.email} onChange={handleEmailInput}/>
                 <a
                   onClick={handleGetQuoteClick}
-                  className="block p-3 text-white font-medium bg-secondary duration-150 hover:bg-secondary-dark rounded text-center shadow-lg hover:cursor-pointer"
+                  className="block p-3 text-white font-medium bg-secondary duration-150 hover:bg-secondary-dark text-center shadow-lg hover:cursor-pointer"
                 >
                   {step > 1 ? "Go Back" : "Get Started"}
                 </a>
@@ -166,7 +166,7 @@ function HeroSection() {
           </div>
           <div ref={formRef} className="mt-14">
             {showImage ? (
-              <Image src="/enquiry/enquiry-step-1.png" alt="Mockup of a desktop website" width={900} height={600} className='mx-auto'/>
+              <Image src="/enquiry/enquiry-step-1.png" alt="Mockup of a desktop website" width={900} height={600} className='mx-auto my-20'/>
             ) : (
               <div className="space-y-8">
                 {/* Render the step based on the current step */}
