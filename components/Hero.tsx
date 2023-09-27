@@ -6,7 +6,7 @@ import SocialIcons from './subComponents/socialIcons';
 import { SparklesIcon } from '@heroicons/react/24/outline';
 import Image from 'next/image';
 import Link from 'next/link';
-import profile from '/public/profile.png';
+import profile from '/public/images/rob-fraser-home.png';
 import Skew from './subComponents/skew';
 
 const Hero = () => {
@@ -60,7 +60,7 @@ const Hero = () => {
                 borderRadius: '100%',
               }}
             >
-              <div className="absolute w-112 h-112 overflow-hidden rounded-full">
+              <div className="absolute w-80 h-80 overflow-hidden rounded-full">
                 <Image src={profile} alt="Rob Fraser, UX Developer 3D portrait" />
               </div>
             </motion.div>
