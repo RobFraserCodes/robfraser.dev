@@ -39,7 +39,7 @@ const Hero = () => {
             onMouseLeave={handleMouseLeave}
           >
             <div className='absolute w-60 h-60 bg-primary/40 rounded-full right-48 top-32'></div>
-            <div className='absolute w-36 h-36 bg-secondary/20 rounded-full left-64 top-8'></div>
+            <div className='absolute w-36 h-36 bg-secondary/20 rounded-full left-64 top-8 hidden md:block'></div>
             <div className='absolute w-16 h-16 bg-primary rounded-full right-96 top-36'></div>
             <div className='absolute bg-primary text-white rounded-full shadow-sm left-64 top-48 z-30 px-4 py-3'>Welcome!</div>
             <Link href="/build-my-app">
